@@ -1,4 +1,4 @@
 # Taxi Demand Predictor
 Final Project - Master in Data Science (KSCHOOL)
 
-![alt text](https://github.com/emunozlorenzo/MasterDataScience/blob/master/img/icon2.png "Logo Title Text 1") [Eduardo Muñoz](https://www.linkedin.com/in/eduardo-mu%C3%B1oz-lorenzo-14144a144/)
+<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin_icon.png" width="60" height="30" title="Github Logo">[Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
