@@ -1,4 +1,4 @@
-DATE,precipitation
+datetime,precipitation
 2017-01-01 00:00,0.0
 2017-01-01 01:00,0.0
 2017-01-01 02:00,0.0
