@@ -43,6 +43,8 @@ def get_LocationIDs():
 @st.cache
 def datetimeInfo_and_LocID(df_LocIds, start_date, NoOfDays):   
 
+    from pandas.tseries.holiday import USFederalHolidayCalendar as calendar
+    
     # repeat LocationIDs. All of them... for each hour
     location_id_col = pd.concat([df_LocIds]*24*NoOfDays).reset_index(drop=True)
 
@@ -54,18 +56,25 @@ def datetimeInfo_and_LocID(df_LocIds, start_date, NoOfDays):
 
     # Create new columns from datetime
     df_pred['month'] = df_pred['datetime'].dt.month
-    df_pred['day'] = df_pred['datetime'].dt.day
     df_pred['hour'] = df_pred['datetime'].dt.hour
     # 'dayhour' will serve as index to perform the join
     df_pred['dayhour'] = df_pred['datetime'].dt.strftime('%d%H')
     df_pred['week'] = df_pred['datetime'].dt.week
     df_pred['dayofweek'] = df_pred['datetime'].dt.dayofweek
-        # create column 'isweekend'
-    mask = (df_pred['dayofweek'] == 5) | (df_pred['dayofweek'] == 6)
-    df_pred['isweekend'] = np.where(mask, 1, 0)
 
-    # drop datetime column
+
+    # Create date time index calendar
+    drange = pd.date_range(start=str(start_date.year)+'-01-01', end=str(start_date.year)+'-12-31')
+    cal = calendar()
+    holidays = cal.holidays(start=drange.min(), end=drange.max())
+    
+    # 8.3 create new columns 'date' and 'isholiday'
+    df_pred['date'] = pd.to_datetime(df_pred['datetime'].dt.date)
+    df_pred['isholiday'] = df_pred['datetime'].isin(holidays).astype(int)
+    
+    # drop 'date' and 'datetime' column
     df_pred.drop(['datetime'], axis=1, inplace=True)
+    df_pred.drop(['date'], axis=1, inplace=True)
 
     # repeat rows. 67 rows per hour
     df_pred = df_pred.iloc[np.arange(len(df_pred)).repeat(len(df_LocIds))].reset_index(drop=True)
@@ -145,12 +154,12 @@ def get_output_data(pickle_file, input_data):
 
     # get prediction, convert to integer and convert Array into DataFrame
     model_predict = (model.predict(input_data)).astype(int)
-    df_predict = pd.DataFrame({'NoOfPickups':model_predict})
+    df_predict = pd.DataFrame({'pickups':model_predict})
 
     # join input_data with DataFrame
     joined = input_data.join(df_predict)
     
-    output_data = joined[['hour','dayofweek','LocationID','NoOfPickups']]
+    output_data = joined[['hour','dayofweek','LocationID','pickups']]
     
     return output_data
 
@@ -164,9 +173,8 @@ def load_shape_data():
 
     shape_data = shape_data.drop(['borough'], axis=1)
 
-    shape_data.to_crs(epsg=3785, inplace=True)
-
     #EPSG-Code of Web Mercador
+    shape_data.to_crs(epsg=3785, inplace=True)
 
     # Simplify Shape of Zones (otherwise slow peformance of plot)
     shape_data["geometry"] = shape_data["geometry"].simplify(100)
@@ -207,7 +215,7 @@ def load_taxis_data(output_data, shape_data):
             # add pickups to the Taxi Zones DataFrame       
             df_to_visualize = pd.merge(df_to_visualize, p, on="LocationID", how="left").fillna(0)
             # rename column as per day and hour
-            df_to_visualize.rename(columns={"NoOfPickups" : "Passenger_%d_%d"%(dayofweek, hour)}, inplace=True)
+            df_to_visualize.rename(columns={"pickups" : "Passenger_%d_%d"%(dayofweek, hour)}, inplace=True)
 
     return df_to_visualize
 
@@ -217,7 +225,7 @@ def load_taxis_data(output_data, shape_data):
 # DECLARE VARIABLES: start date, NoOfDays, pickle_file
 start_date = date.today() + timedelta(days=1) # start day is tomorrow
 NoOfDays = 3 # number of days for prediction
-pickle_file = './model_reg_01.pickle'
+pickle_file = './model_regGB.pickle'
 
 # RUN FUNCTIONS
 input_data = get_input_data(start_date, NoOfDays)
@@ -228,21 +236,43 @@ shape_data = load_shape_data()
 
 df_to_visualize = load_taxis_data(output_data,shape_data)
 
+# INITIAL SET PAGE CONFIG
+page_title = 'Taxi Demand Predictor'
+layout='wide'
+initial_sidebar_state = 'expanded'
+
 # SHOW TITLE AND DESCRIPTION
-st.title("Taxi Demand Predictor")
+st.title("Manhattan Taxi Demand Predictor")
 """
-Write some description here
+Hi! With this Machine Learning app you can get your taxi demand prediction in Manhattan for the next 3 days!
+
+Just choose day and hour from the side bar and hover the mouse over the map.
+
+It will tell you how many passenger are expected in that time frame.
 """
 
+# SIDE BAR
+st.sidebar.text('Choose DAY and TIME')
 # add slider widget: Hours
-hour = st.slider("Hour",min_value=0, max_value=23, value=7, step=1)
+hour = st.sidebar.slider("Hour",min_value=0, max_value=23, value=7, step=1)
 
 
-# add slider widget: Dayofweek
-weekday_start = pd.unique(output_data['dayofweek']).min()
-weekday_end = pd.unique(output_data['dayofweek']).max()
-weekday = st.slider("Day of week",min_value=int(weekday_start), max_value=int(weekday_end), step=1)
-
+# add buttons widget: Dayofweek
+button1_day = date.today() + pd.Timedelta(days=1)
+button2_day = date.today() + pd.Timedelta(days=2)
+button3_day = date.today() + pd.Timedelta(days=3)
+    
+button1 = st.sidebar.button(str(button1_day) + " ("+button1_day.strftime("%A") + ")")
+button2 = st.sidebar.button(str(button2_day) + " ("+button2_day.strftime("%A") + ")")
+button3 = st.sidebar.button(str(button3_day) + " ("+button3_day.strftime("%A") + ")")
+weekday = button1_day.weekday()
+if button1:
+    weekday = button1_day.weekday()
+if button2:
+    weekday = button2_day.weekday()
+if button3:
+    weekday = button3_day.weekday()
+    
 
 # ColumnDataSource transforms the data into something that Bokeh and Java understand
 df_to_visualize["Passengers"] = df_to_visualize["Passenger_" + str(weekday) + "_" + str(hour)]
@@ -292,7 +322,6 @@ st.bokeh_chart(p)
 '''
 **Ideas to improve**:
 
-- Day of week slider to buttons showing Monday, Tuesday, etc. instead of numbers.
 - Show day, hour and zone for máximum and minimum value.
 - Show line chart with pickup evolution throughout the day, and make it interactive, highlighting the zone selected in the map
 
