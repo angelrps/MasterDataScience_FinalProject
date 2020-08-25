@@ -244,34 +244,38 @@ initial_sidebar_state = 'expanded'
 # SHOW TITLE AND DESCRIPTION
 st.title("Manhattan Taxi Demand Predictor")
 """
-Hi! With this Machine Learning app you can get your taxi demand prediction in Manhattan for the next 3 days!
+This is my Final Mater's work (Master in Data Science - KSCHOOL).
+This Machine Learning app allows you to predict taxi pickups demand in Manhattan for the next 3 days!
 
 Just choose day and hour from the side bar and hover the mouse over the map.
-
-It will tell you how many passenger are expected in that time frame.
 """
 
 # SIDE BAR
-st.sidebar.text('Choose DAY and TIME')
+st.sidebar.title('Choose DAY and TIME')
 # add slider widget: Hours
-hour = st.sidebar.slider("Hour",min_value=0, max_value=23, value=7, step=1)
-
+hour = st.sidebar.slider("Hour to look at:",min_value=0, max_value=23, value=7, step=1)
+# Buttons title
+st.sidebar.text('Day to look at:')
 
 # add buttons widget: Dayofweek
 button1_day = date.today() + pd.Timedelta(days=1)
 button2_day = date.today() + pd.Timedelta(days=2)
 button3_day = date.today() + pd.Timedelta(days=3)
+selected_day = str(button1_day)
     
-button1 = st.sidebar.button(str(button1_day) + " ("+button1_day.strftime("%A") + ")")
-button2 = st.sidebar.button(str(button2_day) + " ("+button2_day.strftime("%A") + ")")
-button3 = st.sidebar.button(str(button3_day) + " ("+button3_day.strftime("%A") + ")")
+button1 = st.sidebar.button(str(button1_day))
+button2 = st.sidebar.button(str(button2_day))
+button3 = st.sidebar.button(str(button3_day))
 weekday = button1_day.weekday()
 if button1:
     weekday = button1_day.weekday()
+    selected_day = str(button1_day)
 if button2:
     weekday = button2_day.weekday()
+    selected_day = str(button2_day)
 if button3:
     weekday = button3_day.weekday()
+    selected_day = str(button3_day)
     
 
 # ColumnDataSource transforms the data into something that Bokeh and Java understand
@@ -291,8 +295,7 @@ color_bar = ColorBar(color_mapper = color_mapper,
                      location=(0,0),
                      orientation='vertical')
 
-p = figure(title="New York Taxi Pickups",
-           plot_width=450, plot_height=750,
+p = figure(plot_width=450, plot_height=750,
            toolbar_location=None,
            tools='pan,wheel_zoom,box_zoom,reset,save')
 p.xaxis.visible = False
@@ -301,7 +304,7 @@ p.yaxis.visible = False
 p.xgrid.grid_line_color = None
 p.ygrid.grid_line_color = None
 
-#Get rid of zoom on axes:
+# Get rid of zoom on axes:
 for t in p.tools:
     if type(t) == WheelZoomTool:
         t.zoom_on_axis = False
@@ -317,6 +320,7 @@ p.add_tools(hovertool)
 
 p.add_layout(color_bar, 'right')
 
+st.subheader("Pickups: " + selected_day + " between %i:00 and %i:00" % (hour, (hour + 1) % 24))
 st.bokeh_chart(p)
 
 '''
