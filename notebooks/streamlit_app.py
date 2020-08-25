@@ -20,16 +20,17 @@ from bokeh.plotting import figure
 from bokeh.models import HoverTool, Select, ColumnDataSource, WheelZoomTool, LogColorMapper, LinearColorMapper, ColorBar, BasicTicker
 from bokeh.palettes import Viridis256 as palette
 from bokeh.layouts import row
+import altair as alt
 
 
 #############################   DEFINE FUNCTIONS START   #############################
 
 # GET LOCATION ID DATA FRAME
 # when deploying to external server, consider create LocationIDs manually instead of reading csv
-@st.cache
+@st.cache(show_spinner=False)
 def get_LocationIDs():
     # 1. Import Location and Borough columns form NY TAXI ZONES dataset
-    dfzones = pd.read_csv('../data/NY_taxi_zones.csv', sep=',',
+    dfzones = pd.read_csv('https://raw.github.com/angelrps/MasterDataScience_FinalProject/master/data/NY_taxi_zones.csv', sep=',',
                           usecols=['LocationID', 'borough'])
 
     # 2. Filter Manhattan zones
@@ -40,7 +41,7 @@ def get_LocationIDs():
     return dfzones
 
 # CREATE DATETIME INFO AND APPEND LOCATION IDs
-@st.cache
+@st.cache(show_spinner=False)
 def datetimeInfo_and_LocID(df_LocIds, start_date, NoOfDays):   
 
     from pandas.tseries.holiday import USFederalHolidayCalendar as calendar
@@ -85,48 +86,49 @@ def datetimeInfo_and_LocID(df_LocIds, start_date, NoOfDays):
     return df_pred
 
 # SCRAPE PRECIPITATION FORECAST FROM wunderground.com
-@st.cache
+@st.cache(show_spinner=False)
 def scrape_data(today, days_in):
-    # Use .format(YYYY, M, D)
-    lookup_URL = 'https://www.wunderground.com/hourly/us/ny/new-york-city/date/{}-{}-{}.html'
+    with st.spinner("I am scraping weather data from wunderground.com... please wait."):
+        # Use .format(YYYY, M, D)
+        lookup_URL = 'https://www.wunderground.com/hourly/us/ny/new-york-city/date/{}-{}-{}.html'
 
-    options = webdriver.ChromeOptions();
-    options.add_argument('headless'); # to run chrome in the backbroung
+        options = webdriver.ChromeOptions();
+        options.add_argument('headless'); # to run chrome in the backbroung
 
-    driver = webdriver.Chrome(executable_path='./chromedriver.exe', options=options)
+        driver = webdriver.Chrome(executable_path='./chromedriver.exe', options=options)
 
-    start_date = today + pd.Timedelta(days=1)
-    end_date = today + pd.Timedelta(days=days_in + 1)
+        start_date = today + pd.Timedelta(days=1)
+        end_date = today + pd.Timedelta(days=days_in + 1)
 
-    df_prep = pd.DataFrame()
+        df_prep = pd.DataFrame()
 
-    while start_date != end_date:
-        timestamp = pd.Timestamp(str(start_date)+' 00:00:00')
-        
-        print('gathering data from: ', start_date)
-        
-        formatted_lookup_URL = lookup_URL.format(start_date.year,
-                                                 start_date.month,
-                                                 start_date.day)
+        while start_date != end_date:
+            timestamp = pd.Timestamp(str(start_date)+' 00:00:00')
 
-        driver.get(formatted_lookup_URL)
-        rows = WebDriverWait(driver, 60).until(EC.visibility_of_all_elements_located((By.XPATH, '//td[@class="mat-cell cdk-cell cdk-column-liquidPrecipitation mat-column-liquidPrecipitation ng-star-inserted"]')))
-        for row in rows:
-            hour = timestamp.strftime('%H')
-            day = timestamp.strftime('%d')
-            prep = row.find_element_by_xpath('.//span[@class="wu-value wu-value-to"]').text
-            # append new row to table
-            # 'dayhour' column will serve as column index to perform the Join
-            df_prep = df_prep.append(pd.DataFrame({"dayhour":[day+hour], 'precipitation':[prep]}),
-                                     ignore_index = True)
-            
-            timestamp += pd.Timedelta('1 hour')
+            print('gathering data from: ', start_date)
 
-        start_date += timedelta(days=1)
+            formatted_lookup_URL = lookup_URL.format(start_date.year,
+                                                     start_date.month,
+                                                     start_date.day)
+
+            driver.get(formatted_lookup_URL)
+            rows = WebDriverWait(driver, 60).until(EC.visibility_of_all_elements_located((By.XPATH, '//td[@class="mat-cell cdk-cell cdk-column-liquidPrecipitation mat-column-liquidPrecipitation ng-star-inserted"]')))
+            for row in rows:
+                hour = timestamp.strftime('%H')
+                day = timestamp.strftime('%d')
+                prep = row.find_element_by_xpath('.//span[@class="wu-value wu-value-to"]').text
+                # append new row to table
+                # 'dayhour' column will serve as column index to perform the Join
+                df_prep = df_prep.append(pd.DataFrame({"dayhour":[day+hour], 'precipitation':[prep]}),
+                                         ignore_index = True)
+
+                timestamp += pd.Timedelta('1 hour')
+
+            start_date += timedelta(days=1)
     return df_prep
 
 # GET INPUT DATA USING THE FUNCTIONS ABOVE: LocationIDs and Datetime info
-@st.cache
+@st.cache(show_spinner=False)
 def get_input_data(start_date, NoOfDays):
     # get LocationIDs data frame
     df_LocIds = get_LocationIDs()
@@ -146,27 +148,29 @@ def get_input_data(start_date, NoOfDays):
     return df_merged
 
 # GET OUPPUT DATA: get predictions, append to input_data and format it to be processed
-@st.cache
+@st.cache(show_spinner=False)
 def get_output_data(pickle_file, input_data):
-    import pickle
+    with st.spinner("Making predictions..."):
+        import pickle
 
-    model = pickle.load(open(pickle_file,'rb'))
+        model = pickle.load(open(pickle_file,'rb'))
 
-    # get prediction, convert to integer and convert Array into DataFrame
-    model_predict = (model.predict(input_data)).astype(int)
-    df_predict = pd.DataFrame({'pickups':model_predict})
+        # get prediction, convert to integer and convert Array into DataFrame
+        model_predict = (model.predict(input_data)).astype(int)
+        df_predict = pd.DataFrame({'pickups':model_predict})
 
-    # join input_data with DataFrame
-    joined = input_data.join(df_predict)
-    
-    output_data = joined[['hour','dayofweek','LocationID','pickups']]
+        # join input_data with DataFrame
+        joined = input_data.join(df_predict)
+
+        output_data = joined[['hour','dayofweek','LocationID','pickups']]
     
     return output_data
 
 # GET DATA FRAME WITH SHAPE GEOMETRY INFO
-@st.cache
+@st.cache(show_spinner=False)
 def load_shape_data():
-    shape_data = gpd.read_file('../data/taxi_zones/taxi_zones.shp')
+    path = '../data/taxi_zones/taxi_zones.shp'
+    shape_data = gpd.read_file(path)
 
     # filter Manhattan zones
     shape_data = shape_data[shape_data['borough'] == 'Manhattan'].reset_index(drop=True)
@@ -200,7 +204,7 @@ def load_shape_data():
     shape_data = pd.DataFrame(data, columns=["LocationID", "ZoneName", "X", "Y"])
     return shape_data
 
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, show_spinner=False)
 def load_taxis_data(output_data, shape_data):
     df_to_visualize = shape_data.copy()
     pickups = output_data.groupby(['hour','dayofweek','LocationID']).sum()
@@ -221,7 +225,7 @@ def load_taxis_data(output_data, shape_data):
 
 
 #############################   DEFINE FUNCTIONS END   #############################
-
+    
 # DECLARE VARIABLES: start date, NoOfDays, pickle_file
 start_date = date.today() + timedelta(days=1) # start day is tomorrow
 NoOfDays = 3 # number of days for prediction
@@ -244,7 +248,7 @@ initial_sidebar_state = 'expanded'
 # SHOW TITLE AND DESCRIPTION
 st.title("Manhattan Taxi Demand Predictor")
 """
-This is my Final Mater's work (Master in Data Science - KSCHOOL).
+This is my Final Master's work (Master in Data Science - KSCHOOL).
 This Machine Learning app allows you to predict taxi pickups demand in Manhattan for the next 3 days!
 
 Just choose day and hour from the side bar and hover the mouse over the map.
@@ -322,11 +326,3 @@ p.add_layout(color_bar, 'right')
 
 st.subheader("Pickups: " + selected_day + " between %i:00 and %i:00" % (hour, (hour + 1) % 24))
 st.bokeh_chart(p)
-
-'''
-**Ideas to improve**:
-
-- Show day, hour and zone for máximum and minimum value.
-- Show line chart with pickup evolution throughout the day, and make it interactive, highlighting the zone selected in the map
-
-'''
