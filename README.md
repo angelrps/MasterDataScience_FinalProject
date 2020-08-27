@@ -37,9 +37,17 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-Each row is a trip, so to get the number of pickups I just had to count the rows.
+Other data sources:
+- [Polygon shapefile](https://archive.nyu.edu/handle/2451/36743): Represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC).
+- Weather (precipitation forecast): scraped from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city)
 
-## 3. Methodology
+## 3. Methodology and Tools
+* Jupyter Notebook as a workframe.
+* Python for data cleaning, engineering and modelling.
+* Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
+* Selenium Webdriver for web scraping.
+* Streamlit for webapp front-end.
+
 machine learning techniques used, statistical methodologies
 ## 4. Summary of main results
 ## 5. Conclusions
