@@ -25,19 +25,19 @@ There has been a lot of debate and riots in the past year regarding how Uber is 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
 # 2_What Data have I used?
+Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five NY boroughs. Thus, they are the target users of my app.<br>
+
 I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City.
-Specifically 2019 data of **Yellow Taxis**. You can download it from [here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
+Specifically **2019 data of Yellow Taxis**. You can download it from [here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
 
-Yellow taxis are the only vehicles permitted to respond to a street hail from a passenger in all five NY boroughs. They are the target users of my app.
-
-The dataset includes 17 fields (you can have a look to the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
+The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
 * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
-* ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. This id corresponds with one of these city zones.
+* ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. These id's correspond with one of these city zones:
 
-Each row is a trip.
+<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-
+Each row is a trip, so to get the number of pickups I just had to count the rows.
 
 ## 3. Methodology
 machine learning techniques used, statistical methodologies
