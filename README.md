@@ -2,11 +2,10 @@
 * [1_Introduction](#1_Introduction)
   * [1_1_What is this?](#1_1_What-is-this)
   * [1_2_Why?](#1_2_Why)
-  * [1_3_Why is relevant?](#1_3_Why-is-relevant?)
-* [2_What Data have I used?](#2_What-Data-have-I-used?)
-    
+  * [1_3_Why is relevant?](#1_3_Why-is-relevant)
+* [2_What Data have I used?](#2_What-Data-have-I-used)
 
-[<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
+* [About me]
 
 # 1_Introduction
 ## 1_1_What is this?
@@ -16,7 +15,7 @@ It is a machine learning app that predicts for the next three days how many pass
 
 **If you are a KSCHOOL teacher or just want to read the whole Project´s documentation go straight to the wiki page.**
 
-## 1_2_Why
+## 1_2_Why?
 If a taxi driver could know in advance (and with precission) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
 ## 1_3_Why is relevant?
@@ -25,6 +24,9 @@ There has been a lot of debate and riots in the past year regarding how Uber is 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
 # 2_What Data have I used?
+[2019 Yellow Taxi Trip Data](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp)
+
+
 ## 3. Methodology
 machine learning techniques used, statistical methodologies
 ## 4. Summary of main results
@@ -34,3 +36,4 @@ After all the work is done, what can you say about how the problem was resolved
 ## 7. What do you need to run the project?
 ### Notebooks
 ### About me, credits, thanks.
+[<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
