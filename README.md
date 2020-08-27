@@ -24,7 +24,8 @@ There has been a lot of debate and riots in the past year regarding how Uber is 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
 # 2_What Data have I used?
-[2019 Yellow Taxi Trip Data](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp)
+I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City.<br>
+Specifically 2019 data of **Yellow Taxis**: [2019 Yellow Taxi Trip Data](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp).
 
 
 ## 3. Methodology
