@@ -4,6 +4,7 @@
   * [1_2_Why?](#1_2_Why)
   * [1_3_Why is relevant?](#1_3_Why-is-relevant)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
+* [3_Methodology and Tools](#3_Methodology-and-Tools)
 
 * [About me]
 
@@ -36,14 +37,13 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * [**Polygon shapefile**](https://archive.nyu.edu/handle/2451/36743): Represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC).
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-# 3. Methodology and Tools
+# 3_Methodology and Tools
 * Jupyter Notebook as a workframe.
 * Python for data cleaning, engineering and modelling.
 * Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
 * Selenium Webdriver for web scraping.
 * Streamlit for webapp front-end.
 
-machine learning techniques used, statistical methodologies
 # 4. Summary of main results
 # 5. Conclusions
 After all the work is done, what can you say about how the problem was resolved
