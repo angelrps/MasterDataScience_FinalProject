@@ -5,7 +5,8 @@
   * [1_3_Why is relevant?](#1_3_Why-is-relevant)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
-* [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project?)
+* [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project)
+  * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
 
 * [About me]
 
@@ -40,12 +41,34 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 # 3_Methodology and Tools
 * Jupyter Notebook as a workframe.
-* Python for data cleaning, engineering and modelling.
+* Python 3 (pandas, numpy, sklearn) for data cleaning, engineering and modelling.
 * Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
 * Selenium Webdriver for web scraping.
 * Streamlit for webapp front-end.
 
 # 4_What do you need to run the project?
+## 4_1_Dependencies and modules
+- ``pandas``
+- ``numpy``
+- ``matplotlib``
+- ``seaborn``
+- ``altair``
+- ``geopandas``
+- ``bokeh``
+- ``shapely``
+- ``sklearn``
+- ``pickle``
+- ``streamlit``
+- ``selenium``
+## 4_2_Steps
+- Clone the repository.
+- Install the dependencies above.
+- Launch
+Jupyter Notebook or similiar environment able to work with ``.ipynb`` files
+
+ - Python 3
+
+
 ### Notebooks
 ### About me, credits, thanks.
 [<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
