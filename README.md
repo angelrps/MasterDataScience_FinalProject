@@ -1,12 +1,12 @@
 # Taxi Demand Predictor per City Zone
-* [1_Introduction](#1_Introduction)
-  * [1_1_What is this?](#1_1_What-is-this) 
-  * [1_2_Why?](#1_2_Why)
-  * [1_3_Why is relevant?](#1_3_Why-is-relevant)
+* [1_Introduction](#1_Introduction)  <br>
+    * [1_1_What is this?](#1_1_What-is-this) 
+    * [1_2_Why?](#1_2_Why)
+    * [1_3_Why is relevant?](#1_3_Why-is-relevant)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
 * [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project)
-  * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
+    * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
 
 * [About me]
 
