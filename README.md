@@ -5,6 +5,7 @@
   * [1_3_Why is relevant?](#1_3_Why-is-relevant)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
+* [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project?)
 
 * [About me]
 
@@ -44,11 +45,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * Selenium Webdriver for web scraping.
 * Streamlit for webapp front-end.
 
-# 4. Summary of main results
-# 5. Conclusions
-After all the work is done, what can you say about how the problem was resolved
-# 6. User manual for frontend
-# 7. What do you need to run the project?
+# 4_What do you need to run the project?
 ### Notebooks
 ### About me, credits, thanks.
 [<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
