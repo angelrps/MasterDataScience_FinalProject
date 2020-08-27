@@ -1,7 +1,7 @@
 # Taxi Demand Predictor per City Zone
 * [1_Introduction](#1_Introduction)
-  * [1_1_What is this?](#1_1_What-is-this?)
-  * [1_2_Why?](#1_2_Why?)
+  * [1_1_What is this?](#1_1_What-is-this)
+  * [1_2_Why?](#1_2_Why)
   * [1_3_Why is relevant?](#1_3_Why-is-relevant?)
 * [2_What Data have I used?](#2_What-Data-have-I-used?)
     
@@ -16,7 +16,7 @@ It is a machine learning app that predicts for the next three days how many pass
 
 **If you are a KSCHOOL teacher or just want to read the whole Project´s documentation go straight to the wiki page.**
 
-## 1_2_Why?
+## 1_2_Why
 If a taxi driver could know in advance (and with precission) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
 ## 1_3_Why is relevant?
