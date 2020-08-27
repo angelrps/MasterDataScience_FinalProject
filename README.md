@@ -36,7 +36,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * [**Polygon shapefile**](https://archive.nyu.edu/handle/2451/36743): Represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC).
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-## 3. Methodology and Tools
+# 3. Methodology and Tools
 * Jupyter Notebook as a workframe.
 * Python for data cleaning, engineering and modelling.
 * Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
@@ -44,11 +44,11 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * Streamlit for webapp front-end.
 
 machine learning techniques used, statistical methodologies
-## 4. Summary of main results
-## 5. Conclusions
+# 4. Summary of main results
+# 5. Conclusions
 After all the work is done, what can you say about how the problem was resolved
-## 6. User manual for frontend
-## 7. What do you need to run the project?
+# 6. User manual for frontend
+# 7. What do you need to run the project?
 ### Notebooks
 ### About me, credits, thanks.
 [<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
