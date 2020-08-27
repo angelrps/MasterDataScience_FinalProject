@@ -26,7 +26,6 @@ I think that traditional taxi drivers should also make use of advance technology
 
 # 2_What Data have I used?
 * **2019 Yellow Taxis data**: I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the dataset from [here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
-
 The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
