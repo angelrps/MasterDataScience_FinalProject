@@ -1,4 +1,4 @@
-# Taxi Demand Predictor per City Zone
+# Manhattan Taxi Demand Predictor
 This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).  
 Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Madrid.
 
