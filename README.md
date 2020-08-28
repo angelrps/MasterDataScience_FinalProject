@@ -7,6 +7,7 @@
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
 * [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project)
     * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
+    * [4_2_Steps](#4_2_Steps)
 
 * [About me]
 
@@ -41,7 +42,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 # 3_Methodology and Tools
 * Jupyter Notebook as a workframe.
-* Python 3 (pandas, numpy, sklearn) for data cleaning, engineering and modelling.
+* Python 3 (pandas, numpy, sklearn) for data cleaning, engineering and modelling (regression models).
 * Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
 * Selenium Webdriver for web scraping.
 * Streamlit for webapp front-end.
@@ -64,14 +65,16 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 ## 4_2_Steps
 Note:  My working environment has been Ubunto running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
 1. Clone or Download the repository.
-2. 
-2. Open the notebook ``Streamlit.ipynb`` with Jupyter Notebook.
-3. Make sure that the dependecies above are installed.
-Jupyter Notebook or similiar environment able to work with ``.ipynb`` files
-
- - Python 3
-
+2. Launch Ubuntu and navigate to ``\MasterDataScience_FinalProject\notebooks``.
+3. run ``jupyter notebook`` to launch the jupyter server.
+5. Make sure the dependecies above are installed.
+5. Open the notebook ``Streamlit_JustRun.ipynb`` and run the first cell.
+6. It should return a url. Copy and paste in your preferred internet browser.
+7. That´s it! The app takes a couple of seconds to load. This is mainly due to the web-scraping. 
 
 ### Notebooks
 ### About me, credits, thanks.
 [<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
+
+Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
+ 
