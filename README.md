@@ -54,16 +54,17 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 - ``seaborn``
 - ``altair``
 - ``geopandas``
-- ``bokeh``
+- ``descartes``
+- ``bokeh 2.`` or superior
 - ``shapely``
-- ``sklearn``
+- ``scikit-learn``
 - ``pickle``
-- ``streamlit``
+- ``streamlit`` 0.57 or superior
 - ``selenium``
 ## 4_2_Steps
-- Clone the repository.
-- Install the dependencies above.
-- Launch
+1. Clone the repository.
+2. Open the notebook ``Streamlit.ipynb`` with Jupyter Notebook.
+3. Make sure that the dependecies above are installed.
 Jupyter Notebook or similiar environment able to work with ``.ipynb`` files
 
  - Python 3
