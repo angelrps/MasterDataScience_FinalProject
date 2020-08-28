@@ -62,7 +62,9 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 - ``streamlit`` 0.57 or superior
 - ``selenium``
 ## 4_2_Steps
-1. Clone the repository.
+Note:  My working environment has been Ubunto running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
+1. Clone or Download the repository.
+2. 
 2. Open the notebook ``Streamlit.ipynb`` with Jupyter Notebook.
 3. Make sure that the dependecies above are installed.
 Jupyter Notebook or similiar environment able to work with ``.ipynb`` files
