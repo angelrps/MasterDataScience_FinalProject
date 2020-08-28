@@ -17,8 +17,6 @@ The purpose of this README file is to give you a quick overview of the project a
 **If you are a KSCHOOL teacher or just want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**
 
 ## 1_1_What is this?
-**Taxi Demand Predictor** is the Final Project I have developed as part of my Master in Data Science - KSCHOOL (2019-2020).
-
 It is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are made by city zone and in hourly periods.
 
 ## 1_2_Why?
@@ -30,7 +28,7 @@ There has been a lot of debate and riots in the past year regarding how Uber is 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
 # 2_What Data have I used?
-* **2019 Yellow Taxis data**: I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the dataset from [here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
+* **2019 Yellow Taxis data**: I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
 The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
@@ -63,8 +61,9 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 - ``pickle``
 - ``streamlit`` 0.57 or superior
 - ``selenium``
+
 ## 4_2_Steps
-Note:  My working environment has been Ubunto running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
+Note:  My working environment has been Ubuntu running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
 1. Clone or Download the repository.
 2. Launch Ubuntu and navigate to ``\MasterDataScience_FinalProject\notebooks``.
 3. run ``jupyter notebook`` to launch the jupyter server.
