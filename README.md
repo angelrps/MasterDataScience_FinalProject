@@ -63,14 +63,14 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 - ``selenium``
 
 ## 4_2_Steps
-Note:  My working environment has been Ubuntu running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
+**Note**:  My working environment has been Ubuntu running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
 1. Clone or Download the repository.
 2. Launch Ubuntu and navigate to ``\MasterDataScience_FinalProject\notebooks``.
 3. run ``jupyter notebook`` to launch the jupyter server.
 5. Make sure the dependecies above are installed.
 5. Open the notebook ``Streamlit_JustRun.ipynb`` and run the first cell.
 6. It should return a url. Copy and paste in your preferred internet browser.
-7. That´s it! The app takes a couple of seconds to load. This is mainly due to the web-scraping. 
+7. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
 
 ## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
