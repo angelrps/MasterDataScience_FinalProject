@@ -208,11 +208,13 @@ def load_shape_data():
 def load_taxis_data(output_data, shape_data):
     df_to_visualize = shape_data.copy()
     pickups = output_data.groupby(['hour','dayofweek','LocationID']).sum()
-    start_day = pd.unique(output_data['dayofweek']).min()
-    end_day = pd.unique(output_data['dayofweek']).max()
+    #start_day = pd.unique(output_data['dayofweek']).min()
+    #end_day = pd.unique(output_data['dayofweek']).max()
+    listofdays = pd.unique(output_data['dayofweek'])
 
     for hour in range(24):
-        for dayofweek in range(start_day,end_day+1,1):
+        #for dayofweek in range(start_day,end_day+1,1):
+        for dayofweek in listofdays:
             # get pickups for this hour and weekday
             p = pd.DataFrame(pickups.loc[(hour, dayofweek)]).reset_index()
         
