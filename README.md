@@ -1,4 +1,6 @@
 # Taxi Demand Predictor per City Zone
+This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).
+
 * [1_Introduction](#1_Introduction)  <br>
     * [1_1_What is this?](#1_1_What-is-this) 
     * [1_2_Why?](#1_2_Why)
@@ -13,7 +15,7 @@
 
 # 1_Introduction
 The purpose of this README file is to give you a quick overview of the project and go through the necessary steps to run the app in your computer.<br>
-**If you are a KSCHOOL teacher or just want to read the whole Project´s documentation in much more detail, go straight to the wiki page.**
+**If you are a KSCHOOL teacher or just want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**
 
 ## 1_1_What is this?
 **Taxi Demand Predictor** is the Final Project I have developed as part of my Master in Data Science - KSCHOOL (2019-2020).
@@ -72,9 +74,8 @@ Note:  My working environment has been Ubunto running on WSL (Windows Subsystem 
 6. It should return a url. Copy and paste in your preferred internet browser.
 7. That´s it! The app takes a couple of seconds to load. This is mainly due to the web-scraping. 
 
-### Notebooks
 ### About me, credits, thanks.
 [<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
 
-Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
+## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
