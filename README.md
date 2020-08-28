@@ -14,7 +14,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
 
 # 1_Introduction
 The purpose of this README file is to give you a quick overview of the project and go through the necessary steps to run the app in your computer.<br>
-**If you are a KSCHOOL teacher or just want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**
+**If you are a KSchool teacher or just want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**
 
 ## 1_1_What is this?
 It is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are made by city zone and in hourly periods.
