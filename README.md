@@ -1,5 +1,6 @@
 # Taxi Demand Predictor per City Zone
-This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).
+This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).  
+Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Madrid.
 
 * [1_Introduction](#1_Introduction)  <br>
     * [1_1_What is this?](#1_1_What-is-this) 
@@ -10,8 +11,6 @@ This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.li
 * [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project)
     * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
     * [4_2_Steps](#4_2_Steps)
-
-* [About me]
 
 # 1_Introduction
 The purpose of this README file is to give you a quick overview of the project and go through the necessary steps to run the app in your computer.<br>
@@ -73,9 +72,6 @@ Note:  My working environment has been Ubunto running on WSL (Windows Subsystem 
 5. Open the notebook ``Streamlit_JustRun.ipynb`` and run the first cell.
 6. It should return a url. Copy and paste in your preferred internet browser.
 7. That´s it! The app takes a couple of seconds to load. This is mainly due to the web-scraping. 
-
-### About me, credits, thanks.
-[<img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/linkedin-icon.jpg" width="25" height="25" title="Github Logo">](https://www.linkedin.com/in/angelruizpeinado/) [Angel Ruiz-Peinado](https://www.linkedin.com/in/angelruizpeinado/)
 
 ## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
