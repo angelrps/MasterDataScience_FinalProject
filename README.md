@@ -35,6 +35,8 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
   * ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. These id's correspond with the boundary zones of the polygone shapefile.
+  
+* **Weather precipitation history**: downloaded from the [NOAA](https://www.ncdc.noaa.gov/cdo-web/datasets#LCD) (National Centers for Environmental Information).
 
 * **Weather Precipitation Forecast**: scraped from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city).
 
