@@ -65,16 +65,15 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 - ``pickle``
 - ``streamlit`` 0.57 or superior
 - ``selenium``
+- Google Chrome.
 
 ## 4_2_Steps
-**Note**:  My working environment has been Ubuntu running on WSL (Windows Subsystem for Linux). These are the steps you should do if you are in the same environment.
-1. Clone or Download the repository.
+**Note**:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So I will explain my personal one: Ubuntu running on WSL (Windows Subsystem for Linux).
+1. Clone or download the repository.
 2. Launch Ubuntu and navigate to ``\MasterDataScience_FinalProject\notebooks``.
-3. run ``jupyter notebook`` to launch the jupyter server.
-5. Make sure the dependecies above are installed.
-5. Open the notebook ``Streamlit_JustRun.ipynb`` and run the first cell.
-6. It should return a url. Copy and paste in your preferred internet browser.
-7. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
+3. Type ``streamlit run streamlit_app.py``.
+4. Copy the returned Network URL ``http://192.168.1.106:8501 `` and paste in your internet browser.
+5. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
 
 ## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
