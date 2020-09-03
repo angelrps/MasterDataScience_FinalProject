@@ -86,5 +86,5 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 ![runStreamlitApp](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/runStreamlitApp.gif)
 
 
-## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
+## Want to know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
