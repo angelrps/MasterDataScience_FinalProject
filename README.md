@@ -13,6 +13,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
 * [4_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
     * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
     * [4_2_Steps](#4_2_Steps)
+    * [4_3_User Manual](#4_3_User-Manual)
 
 # 1_Introduction
 The purpose of this README file is to give you a quick overview of the project and go through the necessary steps to run the app in your computer.<br>
@@ -74,6 +75,16 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 3. Type ``streamlit run streamlit_app.py``.
 4. Copy the returned Network URL ``http://192.168.1.106:8501 `` and paste in your internet browser.
 5. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
+
+## 4_3_User Manual
+1. Use the sliders to select time.
+2. Use the buttons to select one of the next three days.
+3. The map will colour up according to the number of pickups.
+4. Hover the mouse over the map zones to look at the exact number of pickups.
+
+#### See it in action!
+![runStreamlitApp](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/runStreamlitApp.gif)
+
 
 ## Wanna know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
  
