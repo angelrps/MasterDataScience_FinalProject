@@ -10,7 +10,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
     * [1_3_Why is relevant?](#1_3_Why-is-relevant)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
-* [4_What do you need to run the project?](4_What-do-you-need-to-run-the-project)
+* [4_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
     * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
     * [4_2_Steps](#4_2_Steps)
 
