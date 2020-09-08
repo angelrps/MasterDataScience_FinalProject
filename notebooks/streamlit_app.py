@@ -22,9 +22,6 @@ from bokeh.palettes import Viridis256 as palette
 from bokeh.layouts import row
 import altair as alt
 
-
-#############################   DEFINE FUNCTIONS START   #############################
-
 # GET LOCATION ID DATA FRAME
 # when deploying to external server, consider create LocationIDs manually instead of reading csv
 @st.cache(show_spinner=False)
@@ -225,22 +222,104 @@ def load_taxis_data(output_data, shape_data):
 
     return df_to_visualize
 
+@st.cache(show_spinner=False, allow_output_mutation=True)
+def select_day(gdf_merged, weekday1, weekday2, weekday3, selected_weekday):
+    gdf_merged_c = gdf_merged.copy()
+    day_list = [weekday1, weekday2, weekday3]
+    day_list.remove(selected_weekday)
+    for hour in range(24):
+        for dayofweek in day_list:
+            column_to_drop = "Passenger_%d_%d"%(dayofweek, hour)
+            gdf_merged_c.drop([column_to_drop], axis=1, inplace=True)
+    gdf_merged_c.reset_index(level=0, inplace=True)
+    return gdf_merged_c
 
-#############################   DEFINE FUNCTIONS END   #############################
+def create_altair_plots(long_df):
+    # create selections
+    selection = alt.selection_multi(fields=['ZoneName'])
+    sel_size = alt.selection_single(empty='none')
+    sel_size_legend = alt.selection_multi(fields=['ZoneName'], empty='none')
+    sel_line_hover = alt.selection_single(on='mouseover', empty='none')
+
+    opacity = alt.condition(selection, alt.value(1), alt.value(0.5))
+
+    color = alt.condition(selection,
+                         alt.Color('ZoneName:O', legend=None, scale=alt.Scale(scheme='category10')),
+                         alt.value('lightgray'))
+
+    line = alt.Chart(long_df).mark_line().encode(
+        x='hour',
+        y=alt.Y('Passenger_{0}_'.format(weekday), title='pickups'),
+        color=alt.Color('ZoneName', legend=None),
+        size=alt.condition(sel_line_hover|sel_size|sel_size_legend, alt.value(4),alt.value(1)),
+        opacity = opacity,
+        tooltip = alt.Tooltip('ZoneName:O')
+        ).properties(
+        width=550,
+        height=750,
+        ).add_selection(
+        selection, sel_line_hover,sel_size,sel_size_legend
+        )
+
+    legend = alt.Chart(long_df).mark_point(
+        filled=True, size=50
+        ).encode(
+        y=alt.Y('ZoneName', axis=alt.Axis(orient='right'), title=None),
+        color=color,
+        ).properties(
+        width=20,
+        height=750,
+        ).add_selection(
+        selection,sel_size_legend
+        )
     
-# DECLARE VARIABLES: start date, NoOfDays, pickle_file
-start_date = date.today() + timedelta(days=1) # start day is tomorrow
-NoOfDays = 3 # number of days for prediction
-pickle_file = './model_regGB.pickle'
+    return line, legend
 
-# RUN FUNCTIONS
-input_data = get_input_data(start_date, NoOfDays)
+def create_map_plot(df_to_visualize):
+    df_for_map = df_to_visualize.copy()
+    # ColumnDataSource transforms the data into something that Bokeh and Java understand
+    df_for_map["Passengers"] = df_for_map["Passenger_" + str(weekday) + "_" + str(hour)]
 
-output_data = get_output_data(pickle_file, input_data)
+    source = ColumnDataSource(df_for_map)
 
-shape_data = load_shape_data()
+    max_passengers_per_hour = df_for_map[filter(lambda x: "Passenger_" in x, df_for_map.columns)].max().max()
 
-df_to_visualize = load_taxis_data(output_data,shape_data)
+    color_mapper = LinearColorMapper(palette=palette[::-1], high=max_passengers_per_hour, low=0)
+
+    ##### Color Bar
+    color_bar = ColorBar(color_mapper = color_mapper,
+                         ticker = BasicTicker(),
+                        label_standoff=8,
+                         location=(0,0),
+                         orientation='vertical')
+
+    p = figure(plot_width=450, plot_height=750,
+               toolbar_location=None,
+               tools='pan,wheel_zoom,box_zoom,reset,save')
+    p.xaxis.visible = False
+    p.yaxis.visible = False
+
+    p.xgrid.grid_line_color = None
+    p.ygrid.grid_line_color = None
+    p.outline_line_color = None
+
+    # Get rid of zoom on axes:
+    for t in p.tools:
+        if type(t) == WheelZoomTool:
+            t.zoom_on_axis = False
+
+    patches = p.patches(xs="X", ys="Y", source=source,fill_alpha=1,
+                      fill_color={'field': 'Passengers',
+                                  'transform': color_mapper},
+                      line_color="black", alpha=0.5)
+
+    hovertool = HoverTool(tooltips=[('Zone:', "@ZoneName"),
+                                    ("Passengers:", "@Passengers")])
+    p.add_tools(hovertool)
+    p.add_layout(color_bar, 'right')
+    
+    return p
+#############################   DEFINE FUNCTIONS END   #############################
 
 # INITIAL SET PAGE CONFIG
 page_title = 'Taxi Demand Predictor'
@@ -249,82 +328,84 @@ initial_sidebar_state = 'expanded'
 
 # SHOW TITLE AND DESCRIPTION
 st.title("Manhattan Taxi Demand Predictor")
-"""
-This is my Final Master's work (Master in Data Science - KSCHOOL).
-This Machine Learning app allows you to predict taxi pickups demand in Manhattan for the next 3 days!
 
-Just choose day and hour from the side bar and hover the mouse over the map.
-"""
+st.markdown("This is my Final Master's work (Master in Data Science - [KSchool](https://www.kschool.com/)).\
+            This Machine Learning app allows you to predict taxi pickups demand in Manhattan for the next 3 days!\
+            Choose your options from the side bar.")
 
-# SIDE BAR
-st.sidebar.title('Choose DAY and TIME')
-# add slider widget: Hours
+# DECLARE VARIABLES: start date, NoOfDays, pickle_file
+start_date = date.today() + timedelta(days=1) # start day is tomorrow
+NoOfDays = 3 # number of days for prediction
+pickle_file = './model_regGB.pickle'
+
+# SCRAPE WEATHER, PREPARE DATA, MAKE PREDICTIONS
+input_data = get_input_data(start_date, NoOfDays)
+
+output_data = get_output_data(pickle_file, input_data)
+
+shape_data = load_shape_data()
+
+df_to_visualize = load_taxis_data(output_data,shape_data)
+
+
+# SIDE BAR - TITLE
+st.sidebar.title('Your options:')
+
+choose_graph = st.sidebar.selectbox(
+    'Choose your prefered visualization:',
+     ['Map', 'Line Chart'])
+
+# SIDE BAR - SLIDER: DAYS
+day1 = date.today() + pd.Timedelta(days=1)
+day2 = date.today() + pd.Timedelta(days=2)
+day3 = date.today() + pd.Timedelta(days=3)
+
+choosen_day = st.sidebar.selectbox('Day to look at:', [day1, day2, day3])
+selected_day = str(choosen_day)
+weekday = choosen_day.weekday()
+
+# SIDE BAR - SLIDER: HOURS
+hour=7
 hour = st.sidebar.slider("Hour to look at:",min_value=0, max_value=23, value=7, step=1)
-# Buttons title
-st.sidebar.text('Day to look at:')
 
-# add buttons widget: Dayofweek
-button1_day = date.today() + pd.Timedelta(days=1)
-button2_day = date.today() + pd.Timedelta(days=2)
-button3_day = date.today() + pd.Timedelta(days=3)
-selected_day = str(button1_day)
-    
-button1 = st.sidebar.button(str(button1_day))
-button2 = st.sidebar.button(str(button2_day))
-button3 = st.sidebar.button(str(button3_day))
-weekday = button1_day.weekday()
-if button1:
-    weekday = button1_day.weekday()
-    selected_day = str(button1_day)
-if button2:
-    weekday = button2_day.weekday()
-    selected_day = str(button2_day)
-if button3:
-    weekday = button3_day.weekday()
-    selected_day = str(button3_day)
-    
+# PREPARE DATA FOR LINE CHART    
+# filter selected day data to show on map
+gdf_selected_day = select_day(df_to_visualize,
+                              day1.weekday(),
+                              day2.weekday(),
+                              day3.weekday(),
+                              weekday)
 
-# ColumnDataSource transforms the data into something that Bokeh and Java understand
-df_to_visualize["Passengers"] = df_to_visualize["Passenger_" + str(weekday) + "_" + str(hour)]
+# transform format from wide to long    
+long_df = pd.wide_to_long(gdf_selected_day, ["Passenger_{0}_".format(weekday)], i='index', j="hour")
+long_df = long_df.reset_index()
 
-source = ColumnDataSource(df_to_visualize)
+# filter wrong negative predictions
+long_df.loc[long_df["Passenger_{0}_".format(weekday)]<0, 'Passenger_{0}_'.format(weekday)] = 0
 
-max_passengers_per_hour = df_to_visualize[filter(lambda x: "Passenger_" in x, df_to_visualize.columns)].max().max()
+# CREATE PLOTS
+line, legend = create_altair_plots(long_df)
+#map_plot = create_map_plot(df_to_visualize)
 
-color_mapper = LinearColorMapper(palette=palette[::-1], high=max_passengers_per_hour, low=0)
+if choose_graph == 'Map':
+    st.markdown("*" + selected_day + " between %i:00 and %i:00*" % (hour, (hour + 1) % 24))
+    st.bokeh_chart(create_map_plot(df_to_visualize))
+if choose_graph == 'Line Chart':
+    st.altair_chart(line | legend)   
 
+# SIDE BAR - TOP 3 TABLES
+column_name = "Passenger_{0}_".format(weekday)
+top5_hour = long_df.copy()
+top5_hour = top5_hour[top5_hour['hour']==hour]
+top5_hour = top5_hour.groupby(['ZoneName']).mean().sort_values(column_name, ascending=False)
+top5_hour.rename(columns={column_name: 'Passengers'}, inplace=True)
+top5_hour['Passengers'] = top5_hour['Passengers'].astype(int)
+st.sidebar.subheader('Top 3 areas per HOUR:')
+st.sidebar.table(top5_hour[ 'Passengers'].head(3))
 
-##### Color Bar
-color_bar = ColorBar(color_mapper = color_mapper,
-                     ticker = BasicTicker(),
-                    label_standoff=8,
-                     location=(0,0),
-                     orientation='vertical')
-
-p = figure(plot_width=450, plot_height=750,
-           toolbar_location=None,
-           tools='pan,wheel_zoom,box_zoom,reset,save')
-p.xaxis.visible = False
-p.yaxis.visible = False
-
-p.xgrid.grid_line_color = None
-p.ygrid.grid_line_color = None
-
-# Get rid of zoom on axes:
-for t in p.tools:
-    if type(t) == WheelZoomTool:
-        t.zoom_on_axis = False
-
-patches = p.patches(xs="X", ys="Y", source=source,fill_alpha=1,
-                  fill_color={'field': 'Passengers',
-                              'transform': color_mapper},
-                  line_color="black", alpha=0.5)
-
-hovertool = HoverTool(tooltips=[('Zone:', "@ZoneName"),
-                                ("Passengers:", "@Passengers")])
-p.add_tools(hovertool)
-
-p.add_layout(color_bar, 'right')
-
-st.subheader("Pickups: " + selected_day + " between %i:00 and %i:00" % (hour, (hour + 1) % 24))
-st.bokeh_chart(p)
+top5_day = long_df.copy()
+top5_day = top5_day.groupby('ZoneName').mean().sort_values(column_name, ascending=False)
+top5_day.rename(columns={column_name: 'Passengers'}, inplace=True)
+top5_day['Passengers'] = top5_day['Passengers'].astype(int)
+st.sidebar.subheader('Top 3 areas per DAY:')
+st.sidebar.table(top5_day[ 'Passengers'].head(3))
