@@ -85,9 +85,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * The line chart will show pickups evolution over a whole day for each zone. Highlight a zone by selecting in the chart or in the legend.
 
 #### See it in action!
-![runStreamlitApp](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/runStreamlitApp.gif)
+[![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura.PNG)](https://youtu.be/xO07tr9dJ5o)
 
 
 ## Want to know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
-
-[![hola](https://img.youtube.com/vi/xO07tr9dJ5o/0.jpg)](https://youtu.be/xO07tr9dJ5o)
