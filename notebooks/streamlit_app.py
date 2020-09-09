@@ -275,10 +275,10 @@ def create_altair_plots(long_df):
     
     return line, legend
 
-def create_map_plot(df_to_visualize):
+def create_map_plot(df_to_visualize, _weekday , _hour):
     df_for_map = df_to_visualize.copy()
     # ColumnDataSource transforms the data into something that Bokeh and Java understand
-    df_for_map["Passengers"] = df_for_map["Passenger_" + str(weekday) + "_" + str(hour)]
+    df_for_map["Passengers"] = df_for_map["Passenger_" + str(_weekday) + "_" + str(_hour)]
 
     source = ColumnDataSource(df_for_map)
 
@@ -388,9 +388,10 @@ line, legend = create_altair_plots(long_df)
 #map_plot = create_map_plot(df_to_visualize)
 
 if choose_graph == 'Map':
-    st.markdown("*" + selected_day + " between %i:00 and %i:00*" % (hour, (hour + 1) % 24))
-    st.bokeh_chart(create_map_plot(df_to_visualize))
+    st.markdown("*" + "Pickups between %i:00 and %i:00: " % (hour, (hour + 1) % 24) + selected_day + "*")
+    st.bokeh_chart(create_map_plot(df_to_visualize,weekday,hour))
 if choose_graph == 'Line Chart':
+    st.markdown("*Evolution over the day: " + selected_day+"*")
     st.altair_chart(line | legend)   
 
 # SIDE BAR - TOP 3 TABLES
@@ -409,3 +410,6 @@ top5_day.rename(columns={column_name: 'Passengers'}, inplace=True)
 top5_day['Passengers'] = top5_day['Passengers'].astype(int)
 st.sidebar.subheader('Top 3 areas per DAY:')
 st.sidebar.table(top5_day[ 'Passengers'].head(3))
+
+# ABOUT ME
+st.markdown('*About me: [angelrps.com](https://www.angelrps.com/) | [linkedin](https://www.linkedin.com/in/angelruizpeinado/)*')
