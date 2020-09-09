@@ -87,5 +87,4 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 #### Click in the image to see it in action!
 [![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura.PNG)](https://youtu.be/xO07tr9dJ5o)
 
-
 ## Want to know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
