@@ -84,7 +84,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * The map will colour up according to the number of pickups (hover over the mouse to look at the exact numbers).
 * The line chart will show pickups evolution over a whole day for each zone. Highlight a zone by selecting in the chart or in the legend.
 
-#### See it in action!
+#### Click in the image to see it in action!
 [![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura.PNG)](https://youtu.be/xO07tr9dJ5o)
 
 
