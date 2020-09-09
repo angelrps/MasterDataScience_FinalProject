@@ -77,10 +77,12 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 5. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
 
 ## 4_3_User Manual
-1. Use the sliders to select time.
-2. Use the buttons to select one of the next three days.
-3. The map will colour up according to the number of pickups.
-4. Hover the mouse over the map zones to look at the exact number of pickups.
+* Use the controls on the side bar to select:
+   * Graph type: map or line chart.
+   * Time frame.
+   * Day.
+* The map will colour up according to the number of pickups (hover over the mouse to look at the exact numbers).
+* The line chart will show pickups evolution over a whole day for each zone. Highlight a zone by selecting in the chart or in the legend.
 
 #### See it in action!
 ![runStreamlitApp](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/runStreamlitApp.gif)
