@@ -4,10 +4,7 @@
 This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).  
 Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Madrid.
 
-* [1_Introduction](#1_Introduction)  <br>
-    * [1_1_What is this?](#1_1_What-is-this) 
-    * [1_2_Why?](#1_2_Why)
-    * [1_3_Why is relevant?](#1_3_Why-is-relevant)
+* [1_Introduction](#1_Introduction)
 * [2_What Data have I used?](#2_What-Data-have-I-used)
 * [3_Methodology and Tools](#3_Methodology-and-Tools)
 * [4_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
