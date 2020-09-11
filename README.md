@@ -50,7 +50,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 # 4_What do you need to run the project?
 ## 4_1_Dependencies and modules
-This is what I have used to develop the project:
+Make sure that you have the following dependencies and modules installed in your environment:
 - ``pandas``
 - ``numpy``
 - ``matplotlib``
@@ -79,8 +79,8 @@ Follow these steps to run the app:
 ## 4_3_User Manual
 * Use the controls on the side bar to select:
    * Graph type: map or line chart.
-   * Time frame.
    * Day.
+   * Time frame.
 * The map will colour up according to the number of pickups (hover over the mouse to look at the exact numbers).
 * The line chart will show pickups evolution over a whole day for each zone. Highlight a zone by selecting in the chart or in the legend.
 
