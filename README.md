@@ -25,13 +25,48 @@ The purpose of this document is to give you a quick overview of the project. **I
 
 **Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
 
-## 1_2_Why?
+## Why? And why is it relevant?
 If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
-## 1_3_Why is relevant?
 There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology.
 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
+
+# [2_Methodology]
+## [2_1_Data Engineering]
+### Data pipelines
+I have created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
+### Web Scraping
+I have used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
+
+## [2_2_Machine Learning Techniques]
+### Regression
+I have used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
+### Ensemble learning
+I have applied ensemble learning methods such as **Bagging** (with KNN), **Random Forest** and **Gradient Boosting**.
+
+I have also made used of ``GridSearchCV`` to find the best parameters.
+
+## [2_3_Statistical Methodologies]
+### Predictive Analytics
+Such as **data mining** and **data modeling**.
+### Exploratory Data Analysis (EDA)
+To spot anomalies, test hypothesis and check assumptions with the help of summary statistics and graphical representations. 
+   
+
+ 
+* [3_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
+   * [3_1_Dependencies and modules](#3_1_Dependencies-and-modules)
+   * [3_2_Execution Guide](#3_2_Execution-Guide)
+   * [3_3_User Manual](#4_3_User-Manual)
+* [5_Data Acquisition](#5_Data-Acquisition)
+* [6_Data Preparation](#6_Data-Preparation)
+* [7_Data Analysis](#7_Data-Analysis)
+* [8_Modeling](#8_Modeling)
+* [9_Front-End](#9_Front-End)
+* [10_Conclusions](#10_Conclusions)
+
+
 
 # 2_What Data have I used?
 * **2019 Yellow Taxis data**: I have downloaded the data from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
@@ -47,12 +82,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * [**Polygon shapefile**](https://archive.nyu.edu/handle/2451/36743): Represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC).
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-# 3_Methodology and Tools
-* Jupyter Notebook as a workframe.
-* Python 3 (pandas, numpy, sklearn) for data cleaning, engineering and modelling (regression models).
-* Matplotlib, Seaborn, Bokeh and Altair for data analysis and graphic representation.
-* Selenium Webdriver for web scraping.
-* Streamlit for webapp front-end.
+
 
 # 4_What do you need to run the project?
 ## 4_1_Dependencies and modules
