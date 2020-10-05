@@ -5,19 +5,25 @@ This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.li
 Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Madrid.
 
 * [1_Introduction](#1_Introduction)
-* [2_What Data have I used?](#2_What-Data-have-I-used)
-* [3_Methodology and Tools](#3_Methodology-and-Tools)
-* [4_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
-    * [4_1_Dependencies and modules](#4_1_Dependencies-and-modules)
-    * [4_2_Steps](#4_2_Steps)
-    * [4_3_User Manual](#4_3_User-Manual)
+* [2_Methodology](#1_Methodology)
+   * [2_1_Data Engineering](#2_1_Data-Engineering)
+   * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
+   * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
+* [3_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
+   * [3_1_Dependencies and modules](#3_1_Dependencies-and-modules)
+   * [3_2_Execution Guide](#3_2_Execution-Guide)
+   * [3_3_User Manual](#4_3_User-Manual)
+* [5_Data Acquisition](#5_Data-Acquisition)
+* [6_Data Preparation](#6_Data-Preparation)
+* [7_Data Analysis](#7_Data-Analysis)
+* [8_Modeling](#8_Modeling)
+* [9_Front-End](#9_Front-End)
+* [10_Conclusions](#10_Conclusions)
 
 # 1_Introduction
-The purpose of this README file is to give you a quick overview of the project and go through the necessary steps to run the app in your computer.<br>
-**If you are a KSchool teacher or want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**
+The purpose of this document is to give you a quick overview of the project. **If you want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**<br>
 
-## 1_1_What is this?
-It is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are made by city zone and in hourly periods.
+**Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
 
 ## 1_2_Why?
 If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
