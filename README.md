@@ -7,7 +7,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
 ***I am currently doing some modifications to this readme file and the info may not be shown in the appropriate order. Please, read the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki) for an in-depth understanding of the porject. Apologies for the inconvenience.***
 
 * [1_Introduction](#1_Introduction)
-* [2_Methodology](#1_Methodology)
+* [2_Methodology](#2_Methodology)
    * [2_1_Data Engineering](#2_1_Data-Engineering)
    * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
    * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
