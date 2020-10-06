@@ -11,12 +11,12 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
    * [2_1_Data Engineering](#2_1_Data-Engineering)
    * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
    * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
-* [3_What Data Have I used?](#)
-* [4_Internal Structure](#)
-  * [4_1_Data Processing](#)
-    * [4_1_1_Data Acquisition](#)
-    * [4_1_2_Data Preparation](#)
-    * [4_1_3_Data Analysis](#)
+* [3_What Data Have I used?](#3_What-Data-Have-I-used?)
+* [4_Internal Structure](#4_Internal-Structure)
+  * [4_1_Data Processing](#4_1_Data-Processing)
+    * [4_1_1_Data Acquisition](#4_1_1_Data-Acquisition)
+    * [4_1_2_Data Preparation](#4_1_2_Data-Preparation)
+    * [4_1_3_Data Analysis](#4_1_3_Data-Analysis)
   * [4_2_Modeling](#)
   * [4_3_Front-End](#)
     * [4_3_1_Generate Model Inputs](#)
@@ -75,11 +75,28 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 * **Weather Precipitation Forecast**: I scrape this data from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time when executing the web app to get the predictions.
 
-* [4_Internal Structure](#)
-  * [4_1_Data Processing](#)
-    * [4_1_1_Data Acquisition](#)
-    * [4_1_2_Data Preparation](#)
-    * [4_1_3_Data Analysis](#)
+# 4_Internal Structure
+I can internally divide the project in 3 parts: Data Processing, Modeling and Front-End.
+
+## 4_1_Data Processing
+
+### 4_1_1_Data Acquisition
+This is just downloading the datasets from the sources explained above.
+
+### 4_1_2_Data Preparation
+This is the most laborious part. It includes exploring the *taxis* and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
+Once both datasets are cleaned and transformed, I joined them together in a single **.csv** file (``Data_Cleaned_2019_To_Model.csv``) which is ready to be analysed and/or served as input for the regression models.  
+The *taxis* dataset was specially hard, as its size was to heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
+
+### 4_1_3_Data Analysis
+Now is time to explore the data further by creating some self-explanatory graphs.  
+**1. Map pickups by zone**: I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. This zones should coincide with the predictions of the machine learning models.
+![map](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Map.PNG)
+
+**2. Linear chart pickups over time**: I have analysed pickups' evolution over different periods of time looking for patterns.  
+
+
+
   * [4_2_Modeling](#)
   * [4_3_Front-End](#)
     * [4_3_1_Generate Model Inputs](#)
