@@ -4,21 +4,31 @@
 This project has been developed by [Ángel Ruiz-Peinado Sánchez](https://www.linkedin.com/in/angelruizpeinado/).  
 Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Madrid.
 
+***I am currently doing some modifications to this readme file and the info may not be shown in the appropriate order. Please, read the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki) for an in-depth understanding of the porject. Apologies for the inconvenience.***
+
 * [1_Introduction](#1_Introduction)
 * [2_Methodology](#1_Methodology)
    * [2_1_Data Engineering](#2_1_Data-Engineering)
    * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
    * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
-* [3_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
-   * [3_1_Dependencies and modules](#3_1_Dependencies-and-modules)
-   * [3_2_Execution Guide](#3_2_Execution-Guide)
-   * [3_3_User Manual](#4_3_User-Manual)
-* [5_Data Acquisition](#5_Data-Acquisition)
-* [6_Data Preparation](#6_Data-Preparation)
-* [7_Data Analysis](#7_Data-Analysis)
-* [8_Modeling](#8_Modeling)
-* [9_Front-End](#9_Front-End)
-* [10_Conclusions](#10_Conclusions)
+* [3_What Data Have I used?](#)
+* [4_Internal Structure](#)
+  * [4_1_Data Processing](#)
+    * [4_1_1_Data Acquisition](#)
+    * [4_1_2_Data Preparation](#)
+    * [4_1_3_Data Analysis](#)
+  * [4_2_Modeling](#)
+  * [4_3_Front-End](#)
+    * [4_3_1_Generate Model Inputs](#)
+    * [4_3_2_Generate Predictions](#)
+    * [4_3_3_Visualize Results](#)
+    
+* [5_What do you need to run the project?](#)
+  * [5_1_Dependencies and modules](#)
+  * [5_2_Execution Guide](#)
+  * [5_3_User Manual](#)
+  
+* [6_Conclusions](#6_Conclusions)
 
 # 1_Introduction
 The purpose of this document is to give you a quick overview of the project. **If you want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**<br>
@@ -32,14 +42,14 @@ There has been a lot of debate in the past regarding [how Uber is literally eati
 
 I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
-# [2_Methodology]
-## [2_1_Data Engineering]
+# 2_Methodology
+## 2_1_Data Engineering
 ### Data pipelines
 I have created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
 ### Web Scraping
 I have used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
 
-## [2_2_Machine Learning Techniques]
+## 2_2_Machine Learning Techniques
 ### Regression
 I have used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
 ### Ensemble learning
@@ -47,7 +57,7 @@ I have applied ensemble learning methods such as **Bagging** (with KNN), **Rando
 
 I have also made used of ``GridSearchCV`` to find the best parameters.
 
-## [2_3_Statistical Methodologies]
+## 2_3_Statistical Methodologies
 ### Predictive Analytics
 Such as **data mining** and **data modeling**.
 ### Exploratory Data Analysis (EDA)
@@ -55,9 +65,32 @@ To spot anomalies, test hypothesis and check assumptions with the help of summar
    
 
  
-* [3_What do you need to run the project?](#4_What-do-you-need-to-run-the-project)
-   * [3_1_Dependencies and modules](#3_1_Dependencies-and-modules)
-   * [3_2_Execution Guide](#3_2_Execution-Guide)
+# 3_What do you need to run the project?
+## 3_1_Dependencies and modules
+You need the following dependencies and modules installed in your environment:
+- ``pandas``
+- ``numpy``
+- ``matplotlib``
+- ``seaborn``
+- ``altair``
+- ``geopandas``
+- ``descartes``
+- ``bokeh 2.`` or superior
+- ``shapely``
+- ``scikit-learn``
+- ``pickle``
+- ``streamlit`` 0.57 or superior
+- ``selenium``
+- Google Chrome.
+- ``Chrome Driver``: it needs to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and saved in the same folder as the notebook (``./notebooks``). In the repository my version of ``Chromedriver.exe`` is copied but it could not work on your computer. The driver must be compatible with the installed [``Chrome`` version](https://sites.google.com/a/chromium.org/chromedriver/downloads/version-selection).
+
+
+## 3_2_Execution Guide
+If you want to replicate the project, execute the notebooks in the following order:
+### Explore, Clean and Transform
+**1. [Taxis Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)**: explore, clean and transforms taxis data set into structures needed for the analysis.
+**2. [Weather Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Weather_Clean_Transform.ipynb)**: explore, clean and transforms weather data set into structures needed for the analysis.
+
    * [3_3_User Manual](#4_3_User-Manual)
 * [5_Data Acquisition](#5_Data-Acquisition)
 * [6_Data Preparation](#6_Data-Preparation)
@@ -85,23 +118,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 
 # 4_What do you need to run the project?
-## 4_1_Dependencies and modules
-Make sure that you have the following dependencies and modules installed in your environment:
-- ``pandas``
-- ``numpy``
-- ``matplotlib``
-- ``seaborn``
-- ``altair``
-- ``geopandas``
-- ``descartes``
-- ``bokeh 2.`` or superior
-- ``shapely``
-- ``scikit-learn``
-- ``pickle``
-- ``streamlit`` 0.57 or superior
-- ``selenium``
-- Google Chrome.
-- ``Chrome Driver``: it needs to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and saved in the same folder as the notebook (``./notebooks``). In the repository my version of ``Chromedriver.exe`` is copied but it could not work on your computer. The driver must be compatible with the installed [``Chrome`` version](https://sites.google.com/a/chromium.org/chromedriver/downloads/version-selection).
+
 
 ## 4_2_Steps
 **Note**:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So I will explain my personal one: Ubuntu running on WSL (Windows Subsystem for Linux).<br>
