@@ -90,12 +90,19 @@ The *taxis* dataset was specially hard, as its size was to heavy (8GB and 83 mil
 
 ### 4_1_3_Data Analysis
 Now is time to explore the data further by creating some self-explanatory graphs.  
-**1. Map pickups by zone**: I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. This zones should coincide with the predictions of the machine learning models.
+**1. Map pickups by zone**: I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
 
 ![map](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Map.PNG)
 
 **2. Linear chart pickups over time**: I have analysed pickups' evolution over different periods of time looking for patterns.  
 
+![evolution months](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Months.PNG)
+
+![evolution weeks](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Weeks.PNG)
+
+![evolution single week](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_SingleWeek.PNG)
+
+![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
 
 
   * [4_2_Modeling](#)
