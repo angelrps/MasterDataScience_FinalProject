@@ -84,6 +84,10 @@ This is just downloading the datasets from the sources explained above.
 ### 4_1_2_Data Preparation
 This is the most laborious part. It includes exploring the *taxis* and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
 Once both datasets are cleaned and transformed, I joined them together in a single **.csv** file (``Data_Cleaned_2019_To_Model.csv``) which is ready to be analysed and/or served as input for the regression models.  
+This is how the data looks like after being processed:  
+
+![taxis merged](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Data_Prepare_For_Models_Merged.PNG)
+
 The *taxis* dataset was specially hard, as its size was to heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
 
 ### 4_1_3_Data Analysis
@@ -125,21 +129,30 @@ This graph shows the average number of pickups over a day:
 ![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
 
 #### 3.Scatter Plot Relation between Precipitation and Pickups
-I created this set of plots to find a correlation between precipitation and pickups. My hypothesis is that there are more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
-Most of the days it does not rain, so I will just plot rainy days and remove outliers above 0.5 precipitation.  
+I created this set of plots to find a correlation between precipitation and pickups. My hypothesis was that there were more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
+Most of the days it does not rain, so I plot rainy days and remove outliers above 0.5 precipitation.  
 Surprisingly to me, the scatter plot was very clear: **there is no correlation between ``precipitation`` and ``pickups``.**
 
 ![pickups vs prec 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_PrepVSPickups_3.PNG)
 
 #### 4. Pickups in Rainy Day vs Not Rainy Days
-I wanted to confirm with a second method that my hypothesis about rainy days was wrong, comparing the average of pickups in rainy days vs not rainy days. The results are crystal clear, there is not relation at all between rain and pickups. The average shown below is nearly the same.
+I wanted to confirm that my hypothesis about rainy days was wrong, comparing the average of pickups in rainy days vs not rainy days. The results were crystal clear, there is not relation at all between rain and pickups. The average shown below is nearly the same.
 
 -|precipitation|pickups
 -|-|-
 0|0.0|127.548318
 1|1.0|131.911881
 
+#### 5. Pairwise Relationships
+As the number of pickups is very stable over time, I analysed only one month (so it runs faster in my computer).<br>
+These are the relations found between the variables:
 
+- **Pickups - iswweekend**. There are more pickups during the weekend.
+- **Pickups - dayofweek**. There are more pickups on Saturday, Friday, Thursday. In this order. It is related to ``isweekend`` but it contains more granularity about pickups distribution so I will keep this variable and remove ``is weekend``.
+- **Pickups - hour**. There are more pickups between 23:00 and 3:00. This could be because there is not public transport.
+- **Pickups - day**. There is a clear weekly pattern so this information is already given by ``dayofweek``. So I will remove ``day``.
+
+![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
   * [4_2_Modeling](#)
   * [4_3_Front-End](#)
