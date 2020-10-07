@@ -15,10 +15,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
 * [4_Internal Structure](#4_Internal-Structure)
   * [4_1_Data Processing](#4_1_Data-Processing)
   * [4_2_Modeling](#4_2_Modeling)
-  * [4_3_Front-End](#4_3_Front-End)
-    * [4_3_1_Generate Model Inputs](#4_3_1_Generate-Model-Inputs)
-    * [4_3_2_Generate Predictions](#4_3_2_Generate-Predictions)
-    * [4_3_3_Visualize Results](#4_3_3_Visualize-Results)    
+  * [4_3_Front-End](#4_3_Front-End)   
 * [5_What do you need to run the project?](#)
   * [5_1_Dependencies and modules](#)
   * [5_2_Execution Guide](#)
@@ -145,7 +142,7 @@ These are the relations found between the variables:
 
 ## 4_2_Modeling
 These are the steps I have followed:
-*(check out the full [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))*
+*(check out the full modeling [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))*
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
@@ -219,33 +216,25 @@ Conclusion: **There is no overfitting**.
 
 ### 4_2_8_Pack model with Pickle
 Finally I pack de model with ``pickle`` so I can use it in the front end.
-  
-  
-  
+
 ## 4_3_Front-End
-*(check out the full [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_4_4_Streamlit-app))*  
+*(check out the full front-end [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_4_4_Streamlit-app))*  
+
 The front-end is a web application that a taxi driver could potentially run every day to plan his journey. It performs the following three actions:
 
-### 4_3_1_Generate Model Inputs
+### Generate Model Inputs
 It the one hand, it generates datetime info based on the current date and shapes the data appropriately including ``LocationID`` of Manhattan's zones. On the ohter hand, it scrapes in real time the precipitation weather forecast from www.wunderground.com and attach the data to the previous one.
 
-### 4_3_2_Generate Predictions
+### Generate Predictions
 It unpacks the pickle model and make predictions using the input data generated above.
 
-### 4_3_3_Visualize Results
-It takes the predictions and shapes the data so that it can be shown interactively in a **choropleth map** and a **multiple line chart**. Charts are made with **Bokeh** and **Altair**, and the web application is made with **Streamlit**.
+### Visualize Results
+It takes the predictions and shapes the data so that it can be shown interactively in a **choropleth map** and a **multiple line chart**. Charts are made with **Bokeh** and **Altair**, and the web application is made with **Streamlit**.  
+**Click in the image to see it in action!**  
+[![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura2.png)](https://youtu.be/xO07tr9dJ5o)
 
-
-* [5_What do you need to run the project?](#)
-  * [5_1_Dependencies and modules](#)
-  * [5_2_Execution Guide](#)
-  * [5_3_User Manual](#)  
-* [6_Conclusions](#6_Conclusions)
-
-
- 
-# 3_What do you need to run the project?
-## 3_1_Dependencies and modules
+# 5_What do you need to run the project?
+## 5_1_Dependencies and modules
 You need the following dependencies and modules installed in your environment:
 - ``pandas``
 - ``numpy``
@@ -264,11 +253,42 @@ You need the following dependencies and modules installed in your environment:
 - ``Chrome Driver``: it needs to be installed from [here](https://sites.google.com/a/chromium.org/chromedriver/home) and saved in the same folder as the notebook (``./notebooks``). In the repository my version of ``Chromedriver.exe`` is copied but it could not work on your computer. The driver must be compatible with the installed [``Chrome`` version](https://sites.google.com/a/chromium.org/chromedriver/downloads/version-selection).
 
 
-## 3_2_Execution Guide
+## 5_2_Execution Guide
+
 If you want to replicate the project, execute the notebooks in the following order:
-### Explore, Clean and Transform
-**1. [Taxis Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)**: explore, clean and transforms taxis data set into structures needed for the analysis.
-**2. [Weather Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Weather_Clean_Transform.ipynb)**: explore, clean and transforms weather data set into structures needed for the analysis.
+
+**1. [Taxis Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)**:
+Explore, clean and transforms taxis data set into structures needed for the analysis.  
+
+**2. [Weather Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Weather_Clean_Transform.ipynb)**:
+Explore, clean and transforms weather data set into structures needed for the analysis.  
+
+**3. [Merge Taxis and Weather Data](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Prepare_For_Models.ipynb)**:
+It merges taxis and precipitation data into a single dataset, cleaned and ready for analysis and modeling.
+
+**4. [Data Analysis](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Analysis_01.ipynb)**:
+It does not produce any output needed to execute the app but it contains the analysis in case that you want to execute it yuorself.
+
+**5. [Modeling](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)**:
+Explores different regression models and produces a pickle file with the selected model. You can also take the [pickle file from here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/model_regGB.pickle)
+
+**6. [Front-End](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb)**:
+This notebook outputs the python (``.py``) script that will create the web application.
+
+**7. [Run the app](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)**:
+Finally, you can use this notebook to run the app.
+
+
+For more clarity, this diagram illustrates how the different datasets, notebooks and their outputs are related.
+![methodology_diagram](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Methodology_Diagram.png)
+
+
+  * [5_3_User Manual](#)  
+* [6_Conclusions](#6_Conclusions)
+
+
+
+
 
 
 
