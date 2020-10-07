@@ -288,13 +288,6 @@ For more clarity, this diagram illustrates how the different datasets, notebooks
 
 
 
-
-
-5_What do you need to run the project?
-
-# 4_What do you need to run the project?
-
-
 ## 4_2_Steps
 **Note**:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So I will explain my personal one: Ubuntu running on WSL (Windows Subsystem for Linux).<br>
 Follow these steps to run the app:  
