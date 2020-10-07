@@ -154,9 +154,42 @@ These are the relations found between the variables:
 
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
-## 4_2_Modeling
-First, I create some helper functions to explore metrics and compare models.
-I first create a baseline model by calculating the average of pickups per zone and per hour. After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
+## 4_2_Modeling (check out the code and the wiki)
+* I create some helper functions that will help me out in the process:
+    * [``split_data()``](#split_data): splits the data into train, validation and test.
+    * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
+    * [``get_metrics()``](#get_metrics): it calculates relevant metrics all at once.
+    * [``compare_model_metrics()``](#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
+
+* I import the data (``Data_Cleaned_2019_To_Model.csv``) and select the following features:
+
+INPUT variables:
+- ``month``
+- ``hour``
+- ``week``
+- ``dayofweek``
+- ``isholiday``
+- ``LocationID``
+- ``precipitation``
+
+OUTPUT variable:
+- ``pickups``
+
+* I split the data into train, validation and test.
+
+* I create a baseline model by calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
+* I have used several regression models from ``scikit-learn``:
+  * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
+  * K Nearest Neighbour Regressor
+  * Decision Tree Regresor
+  * K Nearest Neighbour Regressor (using ``GridSearchCV``)
+  * Decision Tree Regressor (using ``GridSearchCV``)
+  * Bagging Regressor (with ``KNeighboursRegressor``)
+  * Random Forest Regressor (using ``GridSearchCV``)
+  * Gradient Boosting Regressor
+  
+  
+After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
   
   
   
