@@ -123,7 +123,7 @@ This graph shows the average number of pickups over a day:
 
 ![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
 
-#### 3.Scatter Plot Relation between Precipitation and Pickups
+#### 3. Scatter Plot Relation between Precipitation and Pickups
 I created this set of plots to find a correlation between precipitation and pickups. My hypothesis was that there were more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
 Most of the days it does not rain, so I plot rainy days and remove outliers above 0.5 precipitation.  
 Surprisingly to me, the scatter plot was very clear: **there is no correlation between ``precipitation`` and ``pickups``.**
@@ -200,9 +200,31 @@ A bar plot it is very useful to compare metrics between models:
 I chose **Gradient Boosting** as it has got the best metrics with the exception of ``MAE`` which is only 1% worse than Random Forest. However, ``RMSE`` is 10% better.
 
 ## Check if there is overfitting
+To check if there is overfitting I do the following:
+### Compare *Test Predictions* with *Validation Predictions*
+If I plot *Actual vs Predicted* values, *Test* Predictions should be similiar or a bit worse than *Validation* Predictions.  
+In this case Test Predictions are actually a bit better but not enough to be worried.
+![overfitting 1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting1.PNG)
 
-  
-After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
+### Compare metrics: should be similiar
+In coherence with the point above, the metrics are also very similar.
+![overfitting 2](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting2.PNG)
+
+
+### Plot Fitted Values vs Residuals: Mean should be zero.
+Finally, I am plotting Fitted Values vs Residuals for both validation and test datasets.  
+Residuals should be randomly scattered around zero. That means that the model´s predictions are correct and the independent variables are explaining everything they can.
+
+In my model everything looks good:
+- The mean is almost zero.
+- The points are randomly scattered around zero.
+
+Conclusion: **There is no overfitting**.
+
+![overfitting 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting3.PNG)
+
+## Pack model with Pickle
+Finally I pack de model with ``pickle`` so I can use it in the front end.
   
   
   
