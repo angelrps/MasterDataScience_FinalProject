@@ -17,7 +17,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
     * [4_1_1_Data Acquisition](#4_1_1_Data-Acquisition)
     * [4_1_2_Data Preparation](#4_1_2_Data-Preparation)
     * [4_1_3_Data Analysis](#4_1_3_Data-Analysis)
-  * [4_2_Modeling](#)
+  * [4_2_Modeling](#4_2_Modeling)
   * [4_3_Front-End](#)
     * [4_3_1_Generate Model Inputs](#)
     * [4_3_2_Generate Predictions](#)
