@@ -155,14 +155,15 @@ These are the relations found between the variables:
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
 ## 4_2_Modeling
-*(check out the code and the wiki)*
-* I create some helper functions that will help me out in the process:
+These are the steps I have followed:
+*(check out the full [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))*
+## Create some helper functions that will help me out in the process
     * [``split_data()``](#split_data): splits the data into train, validation and test.
     * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
     * [``get_metrics()``](#get_metrics): it calculates relevant metrics all at once.
     * [``compare_model_metrics()``](#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
 
-* I import the data (``Data_Cleaned_2019_To_Model.csv``) and select the following features:
+## Import the data (``Data_Cleaned_2019_To_Model.csv``) and select the following features:
 
 INPUT variables:
 - ``month``
@@ -176,10 +177,13 @@ INPUT variables:
 OUTPUT variable:
 - ``pickups``
 
-* I split the data into train, validation and test.
+## Split the data into train, validation and test
+Using my custom function ``split_data()`` which implements ``sklearn.model_selection.train_test_split``.
 
-* I create a baseline model by calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
-* I have used several regression models from ``scikit-learn``:
+## Create a baseline model
+By calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
+
+## Create several regression models from ``scikit-learn``
   * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
   * [K Nearest Neighbour Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor)
   * [Decision Tree Regresor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor)
@@ -189,7 +193,19 @@ OUTPUT variable:
   * [Random Forest Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Random-Forest-Regressor)
   * [Random Forest Regressor (using ``GridSearchCV``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Random-Forest-Regressor_GridSearchCV)
   * [Gradient Boosting Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Gradient-Boosting-Regressor)
-  
+
+## Compare metrics
+Along the process I have plot a couple of graphs to help me tune the models.  
+A scatter plot of 'Actual vs Predicted' values gives you a quick overview of how predictions are performing:
+![DT Grid1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_DT_Grid1.PNG)
+
+A bar plot it is very useful to compare metrics between models:
+![GradientBoosting](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_GradientBoosting.png)
+
+I chose **Gradient Boosting** as it has got the best metrics with the exception of ``MAE`` which is only 1% worse than Random Forest. However, ``RMSE`` is 10% better.
+
+## Check if there is overfitting
+
   
 After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
   
