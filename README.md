@@ -37,24 +37,18 @@ On the other side, I wanted to **solve an existing problem**. There has been a l
 
 # 2_Methodology
 ## 2_1_Data Engineering
-### Data pipelines
-I have created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
-### Web Scraping
-I have used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
+* **Data pipelines**: I have created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
+* **Web Scraping**: I have used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
 
 ## 2_2_Machine Learning Techniques
-### Regression
-I have used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
-### Ensemble learning
-I have applied ensemble learning methods such as **Bagging** (with KNN), **Random Forest** and **Gradient Boosting**.
+* **Regression**: I have used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
+* **Ensemble learning**: I have applied ensemble learning methods such as **Bagging** (with KNN), **Random Forest** and **Gradient Boosting**.
 
 I have also made used of ``GridSearchCV`` to find the best parameters.
 
 ## 2_3_Statistical Methodologies
-### Predictive Analytics
-Such as **data mining** and **data modeling**.
-### Exploratory Data Analysis (EDA)
-To spot anomalies, test hypothesis and check assumptions with the help of summary statistics and graphical representations. 
+* **Predictive Analytics**: Such as **data mining** and **data modeling**.
+* **Exploratory Data Analysis (EDA)**: To spot anomalies, test hypothesis and check assumptions with the help of summary statistics and graphical representations. 
    
 # 3_What Data have I used?
 * **2019 Yellow Taxis data**: I have downloaded this data set from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
