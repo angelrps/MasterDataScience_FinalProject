@@ -154,7 +154,12 @@ These are the relations found between the variables:
 
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
-  * [4_2_Modeling](#)
+## 4_2_Modeling
+First, I create some helper functions to explore metrics and compare models.
+I first create a baseline model by calculating the average of pickups per zone and per hour. After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
+  
+  
+  
   * [4_3_Front-End](#)
     * [4_3_1_Generate Model Inputs](#)
     * [4_3_2_Generate Predictions](#)
