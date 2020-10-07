@@ -230,8 +230,6 @@ It unpacks the pickle model and make predictions using the input data generated 
 
 ### Visualize Results
 It takes the predictions and shapes the data so that it can be shown interactively in a **choropleth map** and a **multiple line chart**. Charts are made with **Bokeh** and **Altair**, and the web application is made with **Streamlit**.  
-**Click in the image to see it in action!**  
-[![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura2.png)](https://youtu.be/xO07tr9dJ5o)
 
 # 5_What do you need to run the project?
 ## 5_1_Dependencies and modules
@@ -267,7 +265,7 @@ Explore, clean and transforms weather data set into structures needed for the an
 It merges taxis and precipitation data into a single dataset, cleaned and ready for analysis and modeling.
 
 **4. [Data Analysis](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Analysis_01.ipynb)**:
-It does not produce any output needed to execute the app but it contains the analysis in case that you want to execute it yuorself.
+It does not produce any output needed to execute the app but it contains the analysis in case that you want to execute it yourself.
 
 **5. [Modeling](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)**:
 Explores different regression models and produces a pickle file with the selected model. You can also take the [pickle file from here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/model_regGB.pickle)
@@ -278,12 +276,23 @@ This notebook outputs the python (``.py``) script that will create the web appli
 **7. [Run the app](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)**:
 Finally, you can use this notebook to run the app.
 
-
 For more clarity, this diagram illustrates how the different datasets, notebooks and their outputs are related.
 ![methodology_diagram](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Methodology_Diagram.png)
 
 
-  * [5_3_User Manual](#)  
+## 5_3_User Manual
+* Use the controls on the side bar to select:
+   * Graph type: map or line chart.
+   * Day.
+   * Time frame.
+* The map will colour up according to the number of pickups (hover over the mouse to look at the exact numbers).
+* The line chart will show pickups evolution over a whole day for each zone. Highlight a zone by selecting in the chart or in the legend.
+
+**Click in the image to see it in action!**  
+[![see it in action](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Miniatura2.png)](https://youtu.be/xO07tr9dJ5o)
+
+
+
 * [6_Conclusions](#6_Conclusions)
 
 
