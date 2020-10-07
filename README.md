@@ -222,10 +222,20 @@ Finally I pack de model with ``pickle`` so I can use it in the front end.
   
   
   
-  * [4_3_Front-End](#)
-    * [4_3_1_Generate Model Inputs](#)
-    * [4_3_2_Generate Predictions](#)
-    * [4_3_3_Visualize Results](#)    
+## 4_3_Front-End
+*(check out the full [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_4_4_Streamlit-app))*  
+The front-end is a web application that a taxi driver could potentially run every day to plan his journey. It performs the following three actions:
+
+### 4_3_1_Generate Model Inputs
+It the one hand, it generates datetime info based on the current date and shapes the data appropriately including ``LocationID`` of Manhattan's zones. On the ohter hand, it scrapes in real time the precipitation weather forecast from www.wunderground.com and attach the data to the previous one.
+
+### 4_3_2_Generate Predictions
+It unpacks the pickle model and make predictions using the input data generated above.
+
+### 4_3_3_Visualize Results
+It takes the predictions and shapes the data so that it can be shown interactively in a **choropleth map** and a **multiple line chart**. Charts are made with **Bokeh** and **Altair**, and the web application is made with **Streamlit**.
+
+
 * [5_What do you need to run the project?](#)
   * [5_1_Dependencies and modules](#)
   * [5_2_Execution Guide](#)
