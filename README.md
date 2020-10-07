@@ -154,7 +154,8 @@ These are the relations found between the variables:
 
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
-## 4_2_Modeling (check out the code and the wiki)
+## 4_2_Modeling
+*(check out the code and the wiki)*
 * I create some helper functions that will help me out in the process:
     * [``split_data()``](#split_data): splits the data into train, validation and test.
     * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
