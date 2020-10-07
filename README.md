@@ -181,13 +181,14 @@ OUTPUT variable:
 * I create a baseline model by calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
 * I have used several regression models from ``scikit-learn``:
   * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
-  * K Nearest Neighbour Regressor
-  * Decision Tree Regresor
-  * K Nearest Neighbour Regressor (using ``GridSearchCV``)
-  * Decision Tree Regressor (using ``GridSearchCV``)
-  * Bagging Regressor (with ``KNeighboursRegressor``)
-  * Random Forest Regressor (using ``GridSearchCV``)
-  * Gradient Boosting Regressor
+  * [K Nearest Neighbour Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor)
+  * [Decision Tree Regresor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor)
+  * [K Nearest Neighbour Regressor (using ``GridSearchCV``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor_GridSearchCV)
+  * [Decision Tree Regressor (using ``GridSearchCV``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor_GridSearchCV)
+  * [Bagging Regressor (with ``KNeighboursRegressor``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor_Bagging)
+  * [Random Forest Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Random-Forest-Regressor)
+  * [Random Forest Regressor (using ``GridSearchCV``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Random-Forest-Regressor_GridSearchCV)
+  * [Gradient Boosting Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Gradient-Boosting-Regressor)
   
   
 After that, I use different regression models to compare with the baseline model and select the best one. Finally, I pack the model using pickle so I can use it in the front end.
