@@ -34,11 +34,9 @@ The purpose of this document is to give you a quick overview of the project. **I
 **Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
 
 ## Why? And why is it relevant?
-If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
+I wanted my project to be potentially **profitable in the real market**. If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
-There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology.
-
-I think that traditional taxi drivers should also make use of advance technology like this machine learning app in order to improve their service and profitability.
+On the other side, I wanted to **solve an existing problem**. There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology. I think that traditional taxi drivers should also make use of advance technology like my machine learning app in order to improve their service and profitability.
 
 # 2_Methodology
 ## 2_1_Data Engineering
@@ -90,19 +88,57 @@ The *taxis* dataset was specially hard, as its size was to heavy (8GB and 83 mil
 
 ### 4_1_3_Data Analysis
 Now is time to explore the data further by creating some self-explanatory graphs.  
-**1. Map pickups by zone**: I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
+#### 1. Map pickups by zone
+I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
 
 ![map](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Map.PNG)
 
-**2. Linear chart pickups over time**: I have analysed pickups' evolution over different periods of time looking for patterns.  
+#### 2. Linear chart pickups over time
+I have analysed pickups' evolution over different periods of time looking for patterns.  
+
+**Pickpus evolution over Months**  
+- The number of pickups over the year is quite constant.  
+- The only variation is a small decrease of pickups over the Summer months: July and August. This can mean that most taxis are taken by new yorkers (not tourists), and in this period new yorkers travel away from the city.
 
 ![evolution months](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Months.PNG)
 
+
+**Pickpus evolution over Weeks**  
+This graph shows better how the taxi demand drops drastically on the USA Federal holidays:
+- New Year's Day: 1st of January.
+- Independence Day: 4th July.
+- Labor Day: first Monday of September.
+- Thanksgiving: 4th Thursday of November.
+
 ![evolution weeks](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Weeks.PNG)
+
+**Pickpus evolution over a Single Week**  
+This graph shows the average number of pickups per weekday. Monday and Sunday are a bit quieter than the other days, but not much.
 
 ![evolution single week](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_SingleWeek.PNG)
 
+**Pickpus evolution over a Day**  
+This graph shows the average number of pickups over a day:
+- 18:00 and 19:00 are the peak hours.
+- 1:00 am to 6:00 am the quieter.
+
 ![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
+
+#### 3.Scatter Plot Relation between Precipitation and Pickups
+I created this set of plots to find a correlation between precipitation and pickups. My hypothesis is that there are more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
+Most of the days it does not rain, so I will just plot rainy days and remove outliers above 0.5 precipitation.  
+Surprisingly to me, the scatter plot was very clear: **there is no correlation between ``precipitation`` and ``pickups``.**
+
+![pickups vs prec 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_PrepVSPickups_3.PNG)
+
+#### 4. Pickups in Rainy Day vs Not Rainy Days
+I wanted to confirm with a second method that my hypothesis about rainy days was wrong, comparing the average of pickups in rainy days vs not rainy days. The results are crystal clear, there is not relation at all between rain and pickups. The average shown below is nearly the same.
+
+-|precipitation|pickups
+-|-|-
+0|0.0|127.548318
+1|1.0|131.911881
+
 
 
   * [4_2_Modeling](#)
