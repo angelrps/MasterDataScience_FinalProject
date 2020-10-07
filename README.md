@@ -146,15 +146,15 @@ These are the relations found between the variables:
 ## 4_2_Modeling
 These are the steps I have followed:
 *(check out the full [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))*
-## Create some helper functions that will help me out in the process
-    * [``split_data()``](#split_data): splits the data into train, validation and test.
-    * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
-    * [``get_metrics()``](#get_metrics): it calculates relevant metrics all at once.
-    * [``compare_model_metrics()``](#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
+### 4_2_1_Create some helper functions that will help me out in the process
+* [``split_data()``](#split_data): splits the data into train, validation and test.
+* [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
+* [``get_metrics()``](#get_metrics): it calculates relevant metrics all at once.
+* [``compare_model_metrics()``](#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
 
-## Import the data (``Data_Cleaned_2019_To_Model.csv``) and select the following features:
-
-INPUT variables:
+### 4_2_2_Import the data and select the following features:
+I import the file ``Data_Cleaned_2019_To_Model.csv`` generated in the previous part and select de folowing features:
+Input variables:
 - ``month``
 - ``hour``
 - ``week``
@@ -163,16 +163,16 @@ INPUT variables:
 - ``LocationID``
 - ``precipitation``
 
-OUTPUT variable:
+Output variable:
 - ``pickups``
 
-## Split the data into train, validation and test
+### 4_2_3_Split the data into train, validation and test
 Using my custom function ``split_data()`` which implements ``sklearn.model_selection.train_test_split``.
 
-## Create a baseline model
+### 4_2_4_Create a baseline model
 By calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
 
-## Create several regression models from ``scikit-learn``
+### 4_2_5_Create several regression models from ``scikit-learn``
   * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
   * [K Nearest Neighbour Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor)
   * [Decision Tree Regresor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor)
@@ -183,7 +183,7 @@ By calculating the average of pickups per zone and per hour. I will use this mod
   * [Random Forest Regressor (using ``GridSearchCV``)](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Random-Forest-Regressor_GridSearchCV)
   * [Gradient Boosting Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Gradient-Boosting-Regressor)
 
-## Compare metrics
+### 4_2_6_Compare metrics
 Along the process I have plot a couple of graphs to help me tune the models.  
 A scatter plot of 'Actual vs Predicted' values gives you a quick overview of how predictions are performing:
 ![DT Grid1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_DT_Grid1.PNG)
@@ -193,19 +193,19 @@ A bar plot it is very useful to compare metrics between models:
 
 I chose **Gradient Boosting** as it has got the best metrics with the exception of ``MAE`` which is only 1% worse than Random Forest. However, ``RMSE`` is 10% better.
 
-## Check if there is overfitting
+### 4_2_7_Check if there is overfitting
 To check if there is overfitting I do the following:
-### Compare *Test Predictions* with *Validation Predictions*
+#### Compare *Test Predictions* with *Validation Predictions*
 If I plot *Actual vs Predicted* values, *Test* Predictions should be similiar or a bit worse than *Validation* Predictions.  
 In this case Test Predictions are actually a bit better but not enough to be worried.
 ![overfitting 1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting1.PNG)
 
-### Compare metrics: should be similiar
+#### Compare metrics: should be similiar
 In coherence with the point above, the metrics are also very similar.
 ![overfitting 2](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting2.PNG)
 
 
-### Plot Fitted Values vs Residuals: Mean should be zero.
+#### Plot Fitted Values vs Residuals: Mean should be zero.
 Finally, I am plotting Fitted Values vs Residuals for both validation and test datasets.  
 Residuals should be randomly scattered around zero. That means that the model´s predictions are correct and the independent variables are explaining everything they can.
 
@@ -217,7 +217,7 @@ Conclusion: **There is no overfitting**.
 
 ![overfitting 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting3.PNG)
 
-## Pack model with Pickle
+### 4_2_8_Pack model with Pickle
 Finally I pack de model with ``pickle`` so I can use it in the front end.
   
   
