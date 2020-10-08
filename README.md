@@ -9,7 +9,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
    * [2_1_Data Engineering](#2_1_Data-Engineering)
    * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
    * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
-* [3_What Data Have I used?](#3_What-Data-Have-I-used%3F?)
+* [3_What Data Have I used?](#3_What-Data-Have-I-used)
 * [4_Internal Structure](#4_Internal-Structure)
   * [4_1_Data Processing](#4_1_Data-Processing)
   * [4_2_Modeling](#4_2_Modeling)
