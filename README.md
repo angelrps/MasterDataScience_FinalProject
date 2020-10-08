@@ -142,7 +142,7 @@ These are the relations found between the variables:
 
 ## 4_2_Modeling
 These are the steps I have followed:
-(check out the [notebook](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))
+(check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb))
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
