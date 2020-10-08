@@ -145,7 +145,7 @@ These are the steps I followed:
 (check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb))
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#split_data): splits the data into train, validation and test.
-* [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
+* [``plot_real_vs_pred()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
 * [``get_metrics()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#get_metrics): it calculates relevant metrics all at once.
 * [``compare_model_metrics()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
 
