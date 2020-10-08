@@ -61,7 +61,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 
 # 4_Internal Structure
 I can divide the project in 3 parts: Data Processing, Modeling and Front-End.
-![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure.PNG)
+![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure2.PNG)
 
 ## 4_1_Data Processing
 Includes **Data Acquisition** (this is just downloading the datasets from the sources explained above), **Data Preparation** and **Data Analysis**.
