@@ -169,7 +169,8 @@ Using my custom function ``split_data()`` which implements ``sklearn.model_selec
 ### 4_2_4_Create a [baseline model](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Baseline-model)
 By calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
 
-### 4_2_5_Create several regression models from ``scikit-learn``
+### 4_2_5_Train several regression models
+using ``scikit-learn``.
   * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
   * [K Nearest Neighbour Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor)
   * [Decision Tree Regresor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor)
@@ -181,8 +182,8 @@ By calculating the average of pickups per zone and per hour. I will use this mod
   * [Gradient Boosting Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Gradient-Boosting-Regressor)
 
 ### 4_2_6_Compare metrics
-Along the process I have plot a couple of graphs to help me tune the models.  
-A scatter plot of 'Actual vs Predicted' values gives you a quick overview of how predictions are performing:
+I plotted a couple of graphs along the process to help me tune the models.  
+A scatter plot of **'Actual vs Predicted'** values gives me a quick overview of how predictions are performing:
 ![DT Grid1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_DT_Grid1.PNG)
 
 A bar plot it is very useful to compare metrics between models:
