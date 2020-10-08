@@ -60,20 +60,21 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * **Weather Precipitation Forecast**: When executing the app, it scrapes precipitation forecast from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time to get the predictions.
 
 # 4_Internal Structure
-I can divide the project in 3 parts: Data Processing, Modeling and Front-End.
+I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Front-End**.
+
 ![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure2.PNG)
 
 ## 4_1_Data Processing
 Includes **Data Acquisition** (this is just downloading the datasets from the sources explained above), **Data Preparation** and **Data Analysis**.
 
 ### Data Preparation
-This is the most laborious part. It includes exploring the *taxis* and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
+This is the most laborious part. It includes exploring the *[taxis]*(https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb) and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
 Once both datasets are cleaned and transformed, I joined them together in a single **.csv** file (``Data_Cleaned_2019_To_Model.csv``) which is ready to be analysed and/or served as input for the regression models.  
 This is how the data looks like after being processed:  
 
 ![taxis merged](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Data_Prepare_For_Models_Merged.PNG)
 
-The *taxis* dataset was specially hard, as its size was to heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
+The *taxis* dataset was specially hard, as the file size was too heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
 
 ### Data Analysis
 Now is time to explore the data further by creating some self-explanatory graphs.  
