@@ -79,22 +79,22 @@ The *taxis* dataset was specially hard, as the file size was too heavy (8GB and 
 ### Data Analysis
 Now is time to explore the data further by creating some self-explanatory graphs.  
 #### 1. Map pickups by zone
-I drew a choropleth map showing Manhattan tazi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
+I plotted a choropleth map showing Manhattan taxi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
 
 ![map](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Map.PNG)
 
 #### 2. Linear chart pickups over time
-I have analysed pickups' evolution over different periods of time looking for patterns.  
+I analysed pickups' evolution over different periods of time looking for patterns.  
 
-**Pickpus evolution over Months**  
+**Pickups evolution over Months**  
 - The number of pickups over the year is quite constant.  
 - The only variation is a small decrease of pickups over the Summer months: July and August. This can mean that most taxis are taken by new yorkers (not tourists), and in this period new yorkers travel away from the city.
 
 ![evolution months](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Months.PNG)
 
 
-**Pickpus evolution over Weeks**  
-This graph shows better how the taxi demand drops drastically on the USA Federal holidays:
+**Pickups evolution over Weeks**  
+This graph shows better how the taxi demand drops drastically on the USA Federal holidays (2019):
 - New Year's Day: 1st of January.
 - Independence Day: 4th July.
 - Labor Day: first Monday of September.
@@ -102,12 +102,12 @@ This graph shows better how the taxi demand drops drastically on the USA Federal
 
 ![evolution weeks](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Weeks.PNG)
 
-**Pickpus evolution over a Single Week**  
+**Pickups evolution over a Single Week**  
 This graph shows the average number of pickups per weekday. Monday and Sunday are a bit quieter than the other days, but not much.
 
 ![evolution single week](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_SingleWeek.PNG)
 
-**Pickpus evolution over a Day**  
+**Pickups evolution over a Day**  
 This graph shows the average number of pickups over a day:
 - 18:00 and 19:00 are the peak hours.
 - 1:00 am to 6:00 am the quieter.
