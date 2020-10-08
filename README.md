@@ -150,8 +150,8 @@ These are the steps I followed:
 * [``compare_model_metrics()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#compare_model_metrics): bar plot to compare metrics from different models and choose the best one.
 
 ### 4_2_2_Import the data and select the following features:
-I import the file ``Data_Cleaned_2019_To_Model.csv`` generated in the previous part and select de folowing features:
-Input variables:
+Import the file ``Data_Cleaned_2019_To_Model.csv`` generated in the previous part and select the following features:
+*Input* variables:
 - ``month``
 - ``hour``
 - ``week``
@@ -160,13 +160,13 @@ Input variables:
 - ``LocationID``
 - ``precipitation``
 
-Output variable:
+*Output* variable:
 - ``pickups``
 
-### 4_2_3_Split the data into train, validation and test
+### 4_2_3_Split the data into Train, Validation and Test
 Using my custom function ``split_data()`` which implements ``sklearn.model_selection.train_test_split``.
 
-### 4_2_4_Create a baseline model
+### 4_2_4_Create a [baseline model](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Baseline-model)
 By calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
 
 ### 4_2_5_Create several regression models from ``scikit-learn``
