@@ -116,13 +116,13 @@ This graph shows the average number of pickups over a day:
 
 #### 3. Scatter Plot Relation between Precipitation and Pickups
 I created this set of plots to find a correlation between precipitation and pickups. My hypothesis was that there were more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
-Most of the days it does not rain, so I plot rainy days and remove outliers above 0.5 precipitation.  
+Most of the days it does not rain, so I plotted only rainy days and removed outliers above 0.5 precipitation.  
 Surprisingly to me, the scatter plot was very clear: **there is no correlation between ``precipitation`` and ``pickups``.**
 
 ![pickups vs prec 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_PrepVSPickups_3.PNG)
 
 #### 4. Pickups in Rainy Day vs Not Rainy Days
-I wanted to confirm that my hypothesis about rainy days was wrong, comparing the average of pickups in rainy days vs not rainy days. The results were crystal clear, there is not relation at all between rain and pickups. The average shown below is nearly the same.
+I wanted to confirm that my hypothesis about rainy days was wrong, by comparing the average of pickups in rainy days vs not rainy days. The results were crystal clear, there is not relation at all between rain and pickups. The average shown below is nearly the same.
 
 -|precipitation|pickups
 -|-|-
