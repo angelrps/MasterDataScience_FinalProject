@@ -77,7 +77,7 @@ This is how the data looks like after being processed:
 The *taxis* dataset was specially hard, as the file size was too heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
 
 ### Data Analysis
-Now is time to explore the data further by creating some self-explanatory graphs.  
+Now is time to explore the data further by creating some self-explanatory graphs (check the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Analysis_01.ipynb)).  
 #### 1. Map pickups by zone
 I plotted a choropleth map showing Manhattan taxi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
 
@@ -130,13 +130,13 @@ I wanted to confirm that my hypothesis about rainy days was wrong, by comparing 
 1|1.0|131.911881
 
 #### 5. Pairwise Relationships
-As the number of pickups is very stable over time, I analysed only one month (so it runs faster in my computer).<br>
+As the number of pickups is very stable over time, I analysed only one month (so that my computer can handle it).<br>
 These are the relations found between the variables:
 
 - **Pickups - iswweekend**. There are more pickups during the weekend.
-- **Pickups - dayofweek**. There are more pickups on Saturday, Friday, Thursday. In this order. It is related to ``isweekend`` but it contains more granularity about pickups distribution so I will keep this variable and remove ``is weekend``.
+- **Pickups - dayofweek**. There are more pickups on Saturday, Friday, Thursday, in this order. This variable is related to ``isweekend`` but it contains more granularity about pickups distribution so I will keep this variable and remove ``is weekend`` when training the models.
 - **Pickups - hour**. There are more pickups between 23:00 and 3:00. This could be because there is not public transport.
-- **Pickups - day**. There is a clear weekly pattern so this information is already given by ``dayofweek``. So I will remove ``day``.
+- **Pickups - day**. There is a clear weekly pattern so this information is already given by ``dayofweek``. So I will not use ``day``.
 
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
