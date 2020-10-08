@@ -26,27 +26,27 @@ The purpose of this document is to give you a quick overview of the project. **I
 **Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
 
 ## Why? And why is it relevant?
-I wanted my project to be potentially **profitable in the real market**. If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
+On the one hand, I wanted my project to be potentially **profitable in the real market**. If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
-On the other side, I wanted to **solve an existing problem**. There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology. I think that traditional taxi drivers should also make use of advance technology like my machine learning app in order to improve their service and profitability.
+On the other hand, I wanted to **solve an existing problem**. There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology. I think that traditional taxi drivers could also make use of advance technology like my machine learning app in order to improve their service and profitability.
 
 # 2_Methodology
 ## 2_1_Data Engineering
-* **Data pipelines**: I have created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
-* **Web Scraping**: I have used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
+* **Data pipelines**: I created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
+* **Web Scraping**: I used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
 
 ## 2_2_Machine Learning Techniques
-* **Regression**: I have used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
+* **Regression**: I used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
 * **Ensemble learning**: I have applied ensemble learning methods such as **Bagging** (with KNN), **Random Forest** and **Gradient Boosting**.
 
-I have also made used of ``GridSearchCV`` to find the best parameters.
+I also used ``GridSearchCV`` to find the best parameters.
 
 ## 2_3_Statistical Methodologies
 * **Predictive Analytics**: Such as **data mining** and **data modeling**.
 * **Exploratory Data Analysis (EDA)**: To spot anomalies, test hypothesis and check assumptions with the help of summary statistics and graphical representations. 
    
 # 3_What Data have I used?
-* **2019 Yellow Taxis data**: I have downloaded this data set from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app.<br>
+* **2019 Yellow Taxis data**: I downloaded this dataset from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app (only if you want to replicate the project).<br>
 The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
