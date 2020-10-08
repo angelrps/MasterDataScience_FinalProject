@@ -77,7 +77,7 @@ This is how the data looks like after being processed:
 The *taxis* dataset was specially hard, as the file size was too heavy (8GB and 83 million lines) to be read with my computer's memory. I had to compress it (800MB), and load it in chunks of 10.000 lines, perform all the analysis and transformations and put the chunks back together in a single file.
 
 ### Data Analysis
-Now is time to explore the data further by creating some self-explanatory graphs (check the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Analysis_01.ipynb)).  
+Now is time to explore the data further by creating some self-explanatory graphs (check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Analysis_01.ipynb)).  
 #### 1. Map pickups by zone
 I plotted a choropleth map showing Manhattan taxi zones by number of pickups, highlighting the top ten in red. These zones should coincide with the predictions of the machine learning models.
 
@@ -142,7 +142,7 @@ These are the relations found between the variables:
 
 ## 4_2_Modeling
 These are the steps I have followed:
-*(check out the full modeling [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))*
+(check out the [notebook](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling))
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
@@ -321,4 +321,4 @@ For more clarity, this diagram illustrates how the different datasets, notebooks
 - It seems like there is a big gap between the product creation and the product use. There are lots of tools for data scientist to analyse data, clean, transform, train models, visualize data, etc. But once all that work is done, we need to put into production, create a product that someone unskilled in the field can use, for example, a web application. Streamlit seems to be the best option, and yet it is in very early stages. For this reason I encountered a significant number of bugs in streamlit while trying to integrate an altair choropleth map. This made me realise of how young is still the Data Science field and some of its tools.
 
 
-## Want to know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
+## Want to know more about this app? Check out the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
