@@ -9,7 +9,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
    * [2_1_Data Engineering](#2_1_Data-Engineering)
    * [2_2_Machine Learning Techniques](#2_2_Machine-Learning-Techniques)
    * [2_3_Statistical Methodologies](#2_3_Statistical-Methodologies)
-* [3_What Data Have I used?](#3_What-Data-Have-I-used?)
+* [3_What Data Have I used?](#3_What-Data-Have-I-used%3F?)
 * [4_Internal Structure](#4_Internal-Structure)
   * [4_1_Data Processing](#4_1_Data-Processing)
   * [4_2_Modeling](#4_2_Modeling)
@@ -45,7 +45,7 @@ I also used ``GridSearchCV`` to find the best parameters.
 * **Predictive Analytics**: Such as **data mining** and **data modeling**.
 * **Exploratory Data Analysis (EDA)**: To spot anomalies, test hypothesis and check assumptions with the help of summary statistics and graphical representations. 
    
-# 3_What Data have I used?
+# 3_What Data Have I used?
 * **2019 Yellow Taxis data**: I downloaded this dataset from [NYC Open Data](https://opendata.cityofnewyork.us/), a free public data source of New York City. You can download the [dataset here](https://data.cityofnewyork.us/Transportation/2019-Yellow-Taxi-Trip-Data/2upf-qytp), although you don´t need it to run this app (only if you want to replicate the project).<br>
 The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
