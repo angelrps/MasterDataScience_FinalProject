@@ -57,10 +57,11 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * **Polygon shape file**: In order to visualize the results I needed geometric data. This ``.shp`` file represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC). You can download the file from several [websites](https://archive.nyu.edu/handle/2451/36743) or from my [repo](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/data/taxi_zones/taxi_zones.shp).
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
 
-* **Weather Precipitation Forecast**: Wehn executing the app, it scrapes precipitation forecast from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time to get the predictions.
+* **Weather Precipitation Forecast**: When executing the app, it scrapes precipitation forecast from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time to get the predictions.
 
 # 4_Internal Structure
 I can divide the project in 3 parts: Data Processing, Modeling and Front-End.
+![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure.PNG)
 
 ## 4_1_Data Processing
 Includes **Data Acquisition** (this is just downloading the datasets from the sources explained above), **Data Preparation** and **Data Analysis**.
