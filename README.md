@@ -304,9 +304,21 @@ For more clarity, this diagram illustrates how the different datasets, notebooks
 
 
 # 6_Conclusions
+- The project addresses a problem that is relevant nowadays, and the final result (a machine learning app) **serves the purpose** it was developed for.
 
+- It is **easy to use**. A taxi driver could easily install the dependencies on his computer and run it in a couple of seconds to look at the most demanding areas and plan his journey for the next 3 days.
 
+- It gives **reliable predictions**.
 
+- The data used in this project is easy to find, comes from a reliable source and it is kept up-to-date. Meaning that **this project could indeed be put in production and be maintained over the years**.
+
+- **Searching for the right dataset** can be very time consuming. Sometimes the data is not available or it does not exist. When I defined my project idea I thought: "it is quite simple, there must be some free taxis dataset of Madrid". I was wrong, after weeks of unsuccessfull search I decided to move on and work with the New York dataset, which is of great quality, but it is not what I wanted.
+
+- Study, clean and transform the data takes most of your time and efforts. And when you think you are done with it, some strange results in the analysis or model predictions warns you that something is wrong with the data, and you have to step back to find out.
+
+- **Study, clean and transform the data is indeed one of the pilars of any machine learning project**. If your data is of a good quality, cleaned and shaped correctly, the models will return good predictions.
+
+- It seems like there is a big gap between the product creation and the product use. There are lots of tools for data scientist to analyse data, clean, transform, train models, visualize data, etc. But once all that work is done, we need to put into production, create a product that someone unskilled in the field can use, for example, a web application. Streamlit seems to be the best option, and yet it is in very early stages. For this reason I encountered a significant number of bugs in streamlit while trying to integrate an altair choropleth map. This made me realise of how young is still the Data Science field and some of its tools.
 
 
 ## Want to know more about this app? Check the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki)
