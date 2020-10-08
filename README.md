@@ -68,7 +68,7 @@ I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Fro
 Includes **Data Acquisition** (this is just downloading the datasets from the sources explained above), **Data Preparation** and **Data Analysis**.
 
 ### Data Preparation
-This is the most laborious part. It includes exploring the *[taxis]*(https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb) and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
+This is the most laborious part. It includes exploring the *[taxis](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)* and *weather* datasets to find anomalies, patterns, insights, test hypothesis, etc.  
 Once both datasets are cleaned and transformed, I joined them together in a single **.csv** file (``Data_Cleaned_2019_To_Model.csv``) which is ready to be analysed and/or served as input for the regression models.  
 This is how the data looks like after being processed:  
 
