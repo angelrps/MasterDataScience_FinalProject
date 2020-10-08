@@ -252,15 +252,19 @@ You need the following dependencies and modules installed in your environment:
 
 
 ## 5_2_Execution Guide
-**If you want to run the app**, follow these steps:
+### If you want to run the app
+Follow these steps:  
 *Note:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So these steps refer to my personal environment: Ubuntu running on WSL (Windows Subsystem for Linux).*<br>
-1. Clone or download the [repository](https://github.com/angelrps/MasterDataScience_FinalProject#5_2_Execution-Guide).
+
+1. Clone or download the [repository](https://github.com/angelrps/MasterDataScience_FinalProject).
 2. Launch Ubuntu and navigate to ``\MasterDataScience_FinalProject\notebooks``.
 3. Type ``streamlit run streamlit_app.py`` in the command line.
 4. Copy the returned Network URL ``http://192.168.1.106:8501 `` and paste in your internet browser.
 5. That´s it! The app takes a couple of seconds to load. This is mainly due to the real time web-scraping. 
 
-**If you want to replicate the project**, execute the notebooks in the following order:  
+### If you want to replicate the project
+Execute the notebooks in the following order:  
+
 **1. [Taxis Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)**:
 Explore, clean and transforms taxis data set into structures needed for the analysis.  
 
@@ -299,12 +303,8 @@ For more clarity, this diagram illustrates how the different datasets, notebooks
 
 
 
-* [6_Conclusions](#6_Conclusions)
+# 6_Conclusions
 
-
-
-## 4_2_Steps
-**Note**:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So I will explain my personal one: Ubuntu running on WSL (Windows Subsystem for Linux).<br>
 
 
 
