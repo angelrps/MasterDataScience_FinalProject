@@ -189,7 +189,13 @@ A scatter plot of **'Actual vs Predicted'** values gives me a quick overview of 
 A bar plot it is very useful to compare metrics between models:
 ![GradientBoosting](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_GradientBoosting.png)
 
-I chose **Gradient Boosting** as it has got the best metrics with the exception of ``MAE`` which is only 1% worse than Random Forest. However, ``RMSE`` is 10% better.
+Finally, I chose **Gradient Boosting** as it had the best metrics:
+- ``RMSE``: 10%
+- ``R2`` = 0.8%
+- ``R`` = 0.4% <br>
+
+And ``MAE`` is only 1% worse than *Random Forest_RandomizedSearchCV*.  
+So in average **I think Gradient Boosting was the best model**  
 
 ### 4_2_7_Check if there is overfitting
 To check if there is overfitting I do the following:
