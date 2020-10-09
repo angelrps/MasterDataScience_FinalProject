@@ -108,9 +108,7 @@ This graph shows the average number of pickups per weekday. Monday and Sunday ar
 ![evolution single week](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_SingleWeek.PNG)
 
 **Pickups evolution over a Day**  
-This graph shows the average number of pickups over a day:
-- 18:00 and 19:00 are the peak hours.
-- 1:00 am to 6:00 am the quieter.
+We can see that 18:00 and 19:00 are the peak hours, whereas 1:00 am to 6:00 am are the quieter.
 
 ![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
 
