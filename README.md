@@ -284,7 +284,7 @@ It does not produce any output needed to execute the app but it contains the ana
 It used the output produced by *Merge Taxis and Weather Data* notebook to explore different regression models and produces a pickle file with the selected model. If you don´t want to run this notebook download the [pickle file from here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/model_regGB.pickle)
 
 **6. [Front-End](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb)**:
-Outputs the python script (``streamlit_app.py``) that will create the web application. Can also be downloaded [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)
+Outputs the python script (``streamlit_app.py``) that will create the web application. Can also be downloaded [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py).
 
 **7. [Run the app](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)**:
 Finally, you can use this notebook to run the app.
@@ -306,7 +306,7 @@ For more clarity, this diagram illustrates how the different datasets, notebooks
 
 
 
-# 6_Conclusions
+# 6_Conclusions and lessons learnt
 - The project addresses a problem that is relevant nowadays, and the final result (a machine learning app) **serves the purpose** it was developed for.
 
 - It is **easy to use**. A taxi driver could easily install the dependencies on his computer and run it in a couple of seconds to look at the most demanding areas and plan his journey for the next 3 days.
