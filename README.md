@@ -24,6 +24,7 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
 **Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
 
 The purpose of this document is to give you a quick overview of the project. **If you want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**<br>
+On the contrary, if you are not interested in the technical details and just want to see the app in actions click [here](https://www.youtube.com/watch?v=xO07tr9dJ5o&feature=youtu.be).
 
 ## Why? And why is it relevant?
 On the one hand, I wanted my project to be potentially **profitable in the real market**. If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
