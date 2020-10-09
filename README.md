@@ -257,7 +257,6 @@ You need the following dependencies and modules installed in your environment:
 
 ## 5_2_Execution Guide
 ### If you want to run the app
-Follow these steps:  
 *Note:  There are multiple environments on which you can execute the app and I am not capable to cover them all. So these steps refer to my personal environment: Ubuntu running on WSL (Windows Subsystem for Linux).*<br>
 
 1. Clone or download the [repository](https://github.com/angelrps/MasterDataScience_FinalProject).
@@ -270,10 +269,10 @@ Follow these steps:
 Execute the notebooks in the following order:  
 
 **1. [Taxis Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Taxis_Clean_Transform.ipynb)**:
-Explore, clean and transforms taxis data set into structures needed for the analysis.  
+Explore, clean and transforms taxis dataset into structures needed for the analysis.  
 
 **2. [Weather Dataset](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Weather_Clean_Transform.ipynb)**:
-Explore, clean and transforms weather data set into structures needed for the analysis.  
+Explore, clean and transforms weather dataset into structures needed for the analysis.  
 
 **3. [Merge Taxis and Weather Data](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Data_Prepare_For_Models.ipynb)**:
 It merges taxis and precipitation data into a single dataset, cleaned and ready for analysis and modeling.
@@ -282,10 +281,10 @@ It merges taxis and precipitation data into a single dataset, cleaned and ready 
 It does not produce any output needed to execute the app but it contains the analysis in case that you want to execute it yourself.
 
 **5. [Modeling](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)**:
-Explores different regression models and produces a pickle file with the selected model. You can also take the [pickle file from here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/model_regGB.pickle)
+It used the output produced by *Merge Taxis and Weather Data* notebook to explore different regression models and produces a pickle file with the selected model. If you don´t want to run this notebook download the [pickle file from here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/model_regGB.pickle)
 
 **6. [Front-End](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb)**:
-This notebook outputs the python (``.py``) script that will create the web application.
+Outputs the python script (``streamlit_app.py``) that will create the web application. Can also be downloaded [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)
 
 **7. [Run the app](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/streamlit_app.py)**:
 Finally, you can use this notebook to run the app.
