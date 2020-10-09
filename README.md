@@ -186,27 +186,27 @@ A scatter plot of **'Actual vs Predicted'** values gives me a quick overview of 
 A bar plot it is very useful to compare metrics between models:
 ![GradientBoosting](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_GradientBoosting.png)
 
-Finally, I chose **Gradient Boosting** as it had the best metrics:
+Finally, I chose **Gradient Boosting** as it improves most of the metrics from the second best model *Random Forest_RandomizedSearchCV*:
+- ``MAE``: -1.0%
 - ``RMSE``: 10%
 - ``R2`` = 0.8%
 - ``R`` = 0.4% <br>
-
-And ``MAE`` is only 1% worse than *Random Forest_RandomizedSearchCV*.  
-So in average **I think Gradient Boosting was the best model**  
+  
+So in average I think **Gradient Boosting was the best model**  
 
 ### 4_2_7_Check if there is overfitting
 To check if there is overfitting I do the following:
-#### Compare *Test Predictions* with *Validation Predictions*
+#### A. Compare *Test Predictions* with *Validation Predictions*
 If I plot *Actual vs Predicted* values, *Test* Predictions should be similiar or a bit worse than *Validation* Predictions.  
 In this case Test Predictions are actually a bit better but not enough to be worried.
 ![overfitting 1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting1.PNG)
 
-#### Compare metrics: should be similiar
+#### B. Compare metrics: should be similiar
 In coherence with the point above, the metrics are also very similar.
 ![overfitting 2](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting2.PNG)
 
 
-#### Plot Fitted Values vs Residuals: Mean should be zero.
+#### C. Plot Fitted Values vs Residuals: Mean should be zero.
 Finally, I am plotting Fitted Values vs Residuals for both validation and test datasets.  
 Residuals should be randomly scattered around zero. That means that the model´s predictions are correct and the independent variables are explaining everything they can.
 
