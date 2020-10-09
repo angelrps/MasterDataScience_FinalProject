@@ -18,22 +18,22 @@ Final Project - Master in Data Science - [KSchool](https://www.kschool.com/) Mad
   * [5_1_Dependencies and modules](#5_1_Dependencies-and-modules)
   * [5_2_Execution Guide](#5_2_Execution-Guide)
   * [5_3_User Manual](#5_3_User-Manual)  
-* [6_Conclusions](#6_Conclusions)
+* [6_Conclusions and lessons learnt](#6_Conclusions-and-lessons-learnt)
 
 # 1_Introduction
-The purpose of this document is to give you a quick overview of the project. **If you want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**<br>
-
 **Manhattan Taxi Demand Predictor** is a machine learning app that predicts for the next three days how many passengers will request a taxi in Manhattan (New York). Predictions are shown grouped by city zone and in hourly periods.
+
+The purpose of this document is to give you a quick overview of the project. **If you want to read the whole Project´s documentation in much more detail, go straight to the [wiki page](https://github.com/angelrps/MasterDataScience_FinalProject/wiki).**<br>
 
 ## Why? And why is it relevant?
 On the one hand, I wanted my project to be potentially **profitable in the real market**. If a taxi driver could know in advance (and with precision) which boroughs or areas are going to have the biggest demand, he could optimize his workday by driving only around those areas. He could choose whether to earn more money in the same time or save that time for his family/personal life. Either way, it will improve his life.
 
-On the other hand, I wanted to **solve an existing problem**. There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology. I think that traditional taxi drivers could also make use of advance technology like my machine learning app in order to improve their service and profitability.
+On the other hand, I wanted to **solve an existing problem**. There has been a lot of debate in the past regarding [how Uber is literally eating the traditional street hail taxi market](https://www.cityandstateny.com/articles/policy/transportation/comparing-cabs-uber-new-york-city.html). Taxi drivers are afraid that they cannot compete with the kind of on-demand fare-adjusted service Uber provide, based in cutting-edge technology. I think that traditional taxi drivers could also make use of advance technology like this machine learning app in order to improve their service and profitability.
 
 # 2_Methodology
 ## 2_1_Data Engineering
 * **Data pipelines**: I created a data pipeline with python to transform gigabytes of data into structures needed for the analysis.
-* **Web Scraping**: I used **Selenium Webdriver** to scrape weather precipitation forecast from www.wunderground.com.
+* **Web Scraping**: I used **Selenium Webdriver** to scrape weather precipitation forecast in real time from www.wunderground.com.
 
 ## 2_2_Machine Learning Techniques
 * **Regression**: I used **linear regression** and non-linear regression models such as **Decision Trees** or **K-Nearest Neighbours**.
@@ -52,7 +52,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
   * ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. These id's correspond with the boundary zones of the polygone shapefile.
   
-* **Weather precipitation history**: I wanted to include precipitation data to train the models, as it is sensible to think that rain would affect the taxi demand. The analysis would show me afterwards that this is not true. I downloaded it from the [NOAA](https://www.ncdc.noaa.gov/cdo-web/datasets#LCD) (National Centers for Environmental Information) but it takes a couple of days for them to respond your query so you can also download it from my repo [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/data/NOAA_CentralPark_Weather.csv).
+* **Weather precipitation history**: I wanted to include precipitation data to train the models, as it is sensible to think that rain would affect the taxi demand (the analysis will show me afterwards that this is not true). I downloaded it from the [NOAA](https://www.ncdc.noaa.gov/cdo-web/datasets#LCD) (National Centers for Environmental Information) but it takes a couple of days for them to respond your query so you can also download it from my repo [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/data/NOAA_CentralPark_Weather.csv).
 
 * **Polygon shape file**: In order to visualize the results I needed geometric data. This ``.shp`` file represents the boundaries zones for taxi pickups as delimited by the New York City Taxi and Limousine Commission (TLC). You can download the file from several [websites](https://archive.nyu.edu/handle/2451/36743) or from my [repo](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/data/taxi_zones/taxi_zones.shp).
 <img src="https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/taxi_zone_map_manhattan.jpg" width="400">
@@ -60,7 +60,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * **Weather Precipitation Forecast**: When executing the app, it scrapes precipitation forecast from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time to get the predictions.
 
 # 4_Internal Structure
-I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Front-End**.
+I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Front-End**. The first part outputs a ``.csv`` file with structured data ready to be used by the ML model. The second part outputs a trained model packed in a **pickle** file. The third part generates a web applitation which interactively shows predictions to the final user.
 
 ![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure2.PNG)
 
