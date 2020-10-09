@@ -113,7 +113,7 @@ We can see that 18:00 and 19:00 are the peak hours, whereas 1:00 am to 6:00 am a
 ![evolution day](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_Evolution_Day.PNG)
 
 #### 3. Scatter Plot Relation between Precipitation and Pickups
-I created this set of plots to find a correlation between precipitation and pickups. My hypothesis was that there were more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
+I created this set of plots looking for a correlation between precipitation and pickups. My hypothesis was that there were more pickups in rainy days, because people that usually walk are more likely to get a taxi.  
 Most of the days it does not rain, so I plotted only rainy days and removed outliers above 0.5 precipitation.  
 Surprisingly to me, the scatter plot was very clear: **there is no correlation between ``precipitation`` and ``pickups``.**
 
@@ -128,19 +128,18 @@ I wanted to confirm that my hypothesis about rainy days was wrong, by comparing 
 1|1.0|131.911881
 
 #### 5. Pairwise Relationships
-As the number of pickups is very stable over time, I analysed only one month (so that my computer can handle it).<br>
+As the number of pickups is very stable over time, I analysed only one month (so that my computer can handle the it).<br>
 These are the relations found between the variables:
 
 - **Pickups - iswweekend**. There are more pickups during the weekend.
 - **Pickups - dayofweek**. There are more pickups on Saturday, Friday, Thursday, in this order. This variable is related to ``isweekend`` but it contains more granularity about pickups distribution so I will keep this variable and remove ``is weekend`` when training the models.
 - **Pickups - hour**. There are more pickups between 23:00 and 3:00. This could be because there is not public transport.
-- **Pickups - day**. There is a clear weekly pattern so this information is already given by ``dayofweek``. So I will not use ``day``.
+- **Pickups - day**. There is a clear weekly pattern so this information is already given by ``dayofweek``. Therefore, I will not use ``day``to train the models.
 
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
 ## 4_2_Modeling
-These are the steps I followed:
-(check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb))
+Below are the steps I followed (check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)).
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
