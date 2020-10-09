@@ -60,7 +60,7 @@ The dataset includes 17 fields (you can have a look at the [data dictionary here
 * **Weather Precipitation Forecast**: When executing the app, it scrapes precipitation forecast from [www.wunderground.com](https://www.wunderground.com/hourly/us/ny/new-york-city) in real time to get the predictions.
 
 # 4_Internal Structure
-I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Front-End**. The first part outputs a ``.csv`` file with structured data ready to be used by the ML model. The second part outputs a trained model packed in a **pickle** file. The third part generates a web applitation which interactively shows predictions to the final user.
+I can divide the project in 3 parts: **Data Processing**, **Modeling** and **Front-End**. The first part outputs a ``.csv`` file with structured data ready to be used by the ML model. The second part outputs a trained model packed in a **pickle** file. The third part generates a web application which interactively shows predictions to the final user.
 
 ![Internal Structure](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Internal%20Structure3.PNG)
 
