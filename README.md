@@ -139,7 +139,7 @@ These are the relations found between the variables:
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
 ## 4_2_Modeling
-Below are the steps I followed (check out the notebook [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)).
+Below are the steps I followed (check out the full code in the [notebook](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)).
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
@@ -167,7 +167,7 @@ Using my custom function ``split_data()`` which implements ``sklearn.model_selec
 By calculating the average of pickups per zone and per hour. I will use this model to compare with the regression models.
 
 ### 4_2_5_Train several regression models
-using ``scikit-learn``.
+Using ``scikit-learn``.
   * [Linear Regression](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Linear-Regression)
   * [K Nearest Neighbour Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#K-Nearest-Neighbour-Regressor)
   * [Decision Tree Regresor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Decision-Tree-Regressor)
@@ -179,7 +179,7 @@ using ``scikit-learn``.
   * [Gradient Boosting Regressor](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#Gradient-Boosting-Regressor)
 
 ### 4_2_6_Compare metrics
-I plotted a couple of graphs along the process to help me tune the models.  
+I used ``matplotlib`` and ``seaborn`` to plot a couple of graphs along the process to help me tune the models.  
 A scatter plot of **'Actual vs Predicted'** values gives me a quick overview of how predictions are performing:
 ![DT Grid1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_DT_Grid1.PNG)
 
