@@ -139,7 +139,7 @@ These are the relations found between the variables:
 ![pairwise relations](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Analysis_pairwise_relations_marked.PNG)
 
 ## 4_2_Modeling
-Below are the steps I followed (check out the full code in the [notebook](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb)).
+Below are the steps I followed *(check out the full code in the [notebook](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Modelling_01.ipynb))*.
 ### 4_2_1_Create some helper functions that will help me out in the process
 * [``split_data()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#split_data): splits the data into train, validation and test.
 * [``plot_real_vs_pred()``](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_3_Modelling#plot_real_vs_pred): it creates a bar plot to visually compare real vs predicted values.
@@ -218,19 +218,19 @@ Conclusion: **There is no overfitting**.
 
 ![overfitting 3](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_Overfitting3.PNG)
 
-### 4_2_8_Pack model with Pickle
+### 4_2_8_Pack the model with Pickle
 Finally I pack de model with ``pickle`` so I can use it in the front end.
 
 ## 4_3_Front-End
-*(check out the full front-end [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb) and the [wiki](https://github.com/angelrps/MasterDataScience_FinalProject/wiki/3_4_4_Streamlit-app))*  
+*(check out the full front-end [code](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/notebooks/Streamlit.ipynb))*  
 
 The front-end is a web application that a taxi driver could potentially run every day to plan his journey. It performs the following three actions:
 
 ### Generate Model Inputs
-It the one hand, it generates datetime info based on the current date and shapes the data appropriately including ``LocationID`` of Manhattan's zones. On the ohter hand, it scrapes in real time the precipitation weather forecast from www.wunderground.com and attach the data to the previous one.
+On the one hand, it generates datetime features based on the current date and shapes the data appropriately including ``LocationID`` of Manhattan's zones. On the other hand, it scrapes in real time the precipitation weather forecast from www.wunderground.com and attach the data to the previous one.
 
 ### Generate Predictions
-It unpacks the pickle model and make predictions using the input data generated above.
+It unpacks the pickle model and make predictions using the features generated above.
 
 ### Visualize Results
 It takes the predictions and shapes the data so that it can be shown interactively in a **choropleth map** and a **multiple line chart**. Charts are made with **Bokeh** and **Altair**, and the web application is made with **Streamlit**.  
