@@ -50,7 +50,7 @@ I also used ``GridSearchCV`` to find the best parameters.
 The dataset includes 17 fields (you can have a look at the [data dictionary here](https://data.cityofnewyork.us/api/views/2upf-qytp/files/4a7a18af-bfc8-43d1-8a2e-faa503f75eb5?download=true&filename=data_dictionary_trip_records_yellow.pdf)). I was only interested in:
 
   * ``tpep_pickup_datetime``: The date and time when the meter was engaged.
-  * ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. These id's correspond with the boundary zones of the polygone shapefile.
+  * ``PULocationID``: TLC Taxi Zone in which the taximeter was engaged. These id's correspond with the boundary zones of the polygon shapefile.
   
 * **Weather precipitation history**: I wanted to include precipitation data to train the models, as it is sensible to think that rain would affect the taxi demand (the analysis will show me afterwards that this is not true). I downloaded it from the [NOAA](https://www.ncdc.noaa.gov/cdo-web/datasets#LCD) (National Centers for Environmental Information) but it takes a couple of days for them to respond your query so you can also download it from my repo [here](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/data/NOAA_CentralPark_Weather.csv).
 
