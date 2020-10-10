@@ -183,7 +183,7 @@ I used ``matplotlib`` and ``seaborn`` to plot a couple of graphs along the proce
 A scatter plot of **'Actual vs Predicted'** values gives me a quick overview of how predictions are performing:
 ![DT Grid1](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_DT_Grid1.PNG)
 
-A bar plot it is very useful to compare metrics between models:
+A bar plot is very useful to compare metrics between models:
 ![GradientBoosting](https://github.com/angelrps/MasterDataScience_FinalProject/blob/master/img/Modelling_GradientBoosting.png)
 
 Finally, I chose **Gradient Boosting** as it improves most of the metrics from the second best model *Random Forest_RandomizedSearchCV*:
